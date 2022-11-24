@@ -1,0 +1,98 @@
+/* plugin page  */
+body {
+    margin: 0;
+}
+
+.plugin {
+    position: relative;
+    width: 100%;
+    height: 601px;
+    padding: 0;
+    background: #0046D2;
+}
+
+.plugin #chattingapp {
+    position: absolute;
+    width: 611px;
+    height: 115px;
+    left: 120px;
+    top: 120px;
+
+    font-family: 'GT Walsheim Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 80px;
+    line-height: 114px;
+    /* identical to box height */
+
+
+    color: #FFE921;
+}
+
+.plugin #content {
+    position: absolute;
+    width: 400px;
+    height: 252px;
+    left: 220px;
+    top: 200px;
+
+    font-family: 'GT Walsheim Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 55px;
+
+    color: #FFFFFF;
+}
+
+.plugin #signin {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 100px;
+    top: 500px;
+    border: none;
+    background: #68B6EF;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+
+    color: #FFFFFF;
+}
+
+.plugin a {
+    color: #FFFFFF;
+    text-decoration: none
+}
+
+.plugin #signup {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 350px;
+    top: 500px;
+    border: none;
+    background: #68B6EF;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+
+    color: #FFFFFF;
+}
+
+.plugin img {
+    position: absolute;
+    width: 610px;
+    height: auto;
+    left: 630px;
+    top: 88px;
+}
+
+.backgound1 {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+    background: #d03434;
+}

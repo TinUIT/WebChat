@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'media/style.css' %}">
+    <title>Trang chủ</title>
+</head>
+
+<body>
+
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    {% load static %} 
+    
+    {% if user.is_authenticated %}
+    <h3>Hello {{fname}}!</h3>
+    <h4>You're successfully logged in.</h4>
+    <button type="submit"><a href="/signout">SignOut</a></button>
+    {% else %}
+    <div class="plugin">
+        <div id="chattingapp">
+            Chatting App
+        </div>
+        <div id="content">
+            <ul>
+                <li>Home</li>
+                <li>Messages</li>
+                <li>Notifications</li>
+                <li>Settings</li>
+            </ul>
+        </div>
+
+        <button id="signin" onclick="location.href=google.com">
+            <a href="/signin">SIGN IN</a> 
+        </button>
+
+        <button id="signup">
+            <a href="/signup">SIGN UP</a> 
+        </button>
+   
+        <a href=""><img src="{% static 'pictures/chat.png' %}" alt="" ></a>
+    {% endif %}
+</body>
+
+</html>

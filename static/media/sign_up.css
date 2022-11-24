@@ -1,0 +1,318 @@
+
+
+.background1 {
+    position: relative;
+    width: 100%;
+    height: 750px;
+    background: #FFFFFF;
+}
+.background1 .background2 #app {
+    position: absolute;
+    width: 136px;
+    height: 30px;
+    left: 42px;
+    top: 31px; 
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height */
+    color: #FFFFFF;
+    
+    
+
+}
+.background1 .background2 {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    left: 0px;
+    top: 0px;
+    background: #0046D2;
+}
+.background1 img{
+    position: absolute;
+    width: 650px;
+    height: auto;
+    left: 17px;
+    top: 100px;
+}
+.background1 .sign_in {
+    position: absolute;
+    width: 40%;
+    height: 600px;
+    left: 700px;
+    top: 140px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.08);
+border-radius: 40px;
+}
+.background1 .sign_in #welcome {
+
+    position: absolute;
+    width: 274px;
+    height: 32px;
+    /*left: 861px;
+    top: 226px; */
+    margin-top: 20px;
+    margin-left: 40px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 32px;
+    /* identical to box height */
+
+
+    color: #0046D2;
+
+}
+.background1 .sign_in #have_an_account {
+
+    position: absolute;
+    height: 40px;
+    left: 360px;
+    top: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+
+    color: #8D8D8D;
+
+}
+.background1 .sign_in #text {
+    position: absolute;
+    width: 186px;
+    height: 83px;
+    left: 40px;
+    top: 40px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 55px;
+    line-height: 82px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+.background1 .sign_in #text_email {
+    position: absolute;
+    left: 40px;
+    top: 120px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+.background1 .sign_in #edit_email {
+    box-sizing: border-box;
+    position: absolute;
+    height: 30px;
+    left: 40px;
+    right: 40px;
+    top: 150px;
+
+    background: #FFFFFF;
+    border: 1px solid #4285F4;
+    border-radius: 9px;
+    color: #808080;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 10px;
+}
+.background1 .sign_in #text_firstname {
+    position: absolute;
+    width: 153px;
+    height: 24px;
+    left: 40px;
+    top: 190px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+
+    color:#000000;
+    float: left;
+}
+.background1 .sign_in #edit_firstname {
+    box-sizing: border-box;
+    position: absolute;
+    height: 30px;
+    left: 40px;
+    right: 250px;
+    top: 220px;
+
+    background: #FFFFFF;
+    border: 1px solid #4285F4;
+    border-radius: 9px;
+    color: #808080;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 10px;
+}
+.background1 .sign_in #text_lastname {
+    position: absolute;
+    /* width: 153px;
+    height: 24px; */
+    left: 260px;
+    top: 190px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+
+    color:#000000;
+}
+.background1 .sign_in #edit_lastname {
+    box-sizing: border-box;
+    position: absolute;
+    height: 30px;
+    left: 260px;
+    right: 40px;
+    top: 220px;
+
+    background: #FFFFFF;
+    border: 1px solid #4285F4;
+    border-radius: 9px;
+    color: #808080;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 10px;
+}
+.background1 .sign_in #text_username {
+    position: absolute;
+    width: 153px;
+    height: 24px;
+    left: 40px;
+    top: 260px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+
+
+    color:#000000;
+    float: left;
+}
+.background1 .sign_in #edit_username {
+    box-sizing: border-box;
+    position: absolute;
+    height: 30px;
+    left: 40px;
+    right: 250px;
+    top: 290px;
+
+    background: #FFFFFF;
+    border: 1px solid #4285F4;
+    border-radius: 9px;
+    color: #808080;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 10px;
+}
+.background1 .sign_in #text_password {
+    position: absolute;
+    left: 40px;
+    top: 330px;
+    font-family: 'Poppins';
+    font-style:normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+
+
+}
+.background1 .sign_in #edit_password {
+    box-sizing: border-box;
+    position: absolute;
+    height: 30px;
+    left: 40px;
+    right: 40px;
+    top: 360px;
+
+    background: #FFFFFF;
+    border: 1px solid #4285F4;
+    border-radius: 9px;
+    color: #808080;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 10px;
+}
+.background1 .sign_in #text_re_enter_password {
+    position: absolute;
+    left: 40px;
+    top: 400px;
+    font-family: 'Poppins';
+    font-style:normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000000;
+
+
+}
+.background1 .sign_in #edit_re_enter_password {
+    box-sizing: border-box;
+    position: absolute;
+    height: 30px;
+    left: 40px;
+    right: 40px;
+    top: 430px;
+
+    background: #FFFFFF;
+    border: 1px solid #4285F4;
+    border-radius: 9px;
+    color: #808080;
+    font-weight: 300;
+    font-size: 14px;
+    padding: 10px;
+}
+
+
+.background1 .sign_in button{
+    position: absolute;
+width: 410px;
+height: 54px;
+left: 40px;
+top: 500px;
+
+background: #0046D2;
+box-shadow: 0px 4px 19px rgba(119, 147, 65, 0.3);
+border-radius: 10px;
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 24px;
+color: #FFFFFF;
+border: none;
+}
+
+
+
