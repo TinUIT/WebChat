@@ -10,9 +10,9 @@
 </head>
 
 <body>
-    {% if user.is_authenticated %}
+    {% if user_chat.is_authenticated %}
     <script type="text/javascript">
-        window.location.href = "../home"
+        window.location.href = "/home"
     </script>
     {% else %}
     <div class="plugin">

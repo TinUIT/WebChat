@@ -1,0 +1,251 @@
+#root,body,html{
+    height:100%;
+    background:#fcfcfc
+}
+#root{
+display:flex;
+flex-direction:column;
+position:relative;
+overflow:hidden}
+#root .intro-wallpaper{
+overflow-x:hidden;
+overflow-y:scroll
+}
+.intro-wallpaper,.login-wallpaper{
+    flex-direction:column;
+    align-items:center
+}
+.intro-wallpaper .lang-container,.login-wallpaper .lang-container{
+    margin-bottom:45px
+}
+.intro-wallpaper .lang-container img,.login-wallpaper .lang-container img{
+    width:39px;
+    height:33px;
+    margin:0 12px
+}
+.intro-wallpaper_top,.login-wallpaper_top,.main-wallpaper_left .main-wallpaper_left_top{
+    flex:7 1;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center
+}
+.intro-wallpaper_bottom,.login-wallpaper_bottom,.main-wallpaper_left .main-wallpaper_left_bottom{
+    flex:3 1;
+    display:flex;
+    flex-direction:column;
+    align-items:center
+}
+.intro-wallpaper{
+    margin:auto 0
+}
+.intro-wallpaper .intro-wallpaper_top{
+    font-family:"Helvetica-Neue-Regular";
+    text-align:center;
+    flex:unset;
+    margin-top:80px;
+    margin-bottom:60px
+}
+.intro-wallpaper .lable{
+    font-size:24px;
+    line-height:29px;
+    color:#444
+}
+    .intro-wallpaper .sub-lable{
+    font-size:16px;
+    line-height:19px;
+    color:#8e8e93;
+    margin:10px 30px 20px}
+    .intro-wallpaper .gender-options-container{
+    margin:50px 0 90px;
+    display:flex}
+    .intro-wallpaper .gender-options-container>div{
+    margin:0 25px}
+    .intro-wallpaper .year-options-container{
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    margin-bottom:60px}
+    .intro-wallpaper .year-options-container .edit-year-icon{
+    -webkit-tap-highlight-color:transparent}
+    .intro-wallpaper .year-options-container .edit-year-icon:active{
+    cursor:pointer;
+    -webkit-transform:scale(.9);
+    transform:scale(.9)}
+    .intro-wallpaper .year-options-container .content{
+    display:flex;
+    font-family:"Helvetica-Neue-Medium";
+    font-size:36px;
+    font-weight:500;
+    line-height:44px;
+    color:#ff5e5e;
+    margin:0 30px;
+    padding-bottom:5px}
+    .intro-wallpaper .year-options-container .content .time-part-wrapper{
+    height:44px;
+    display:flex}
+    .intro-wallpaper .year-options-container .content .time-part-wrapper .time-part{
+    -webkit-transition:all .3s ease;
+    transition:all .3s ease}
+    .intro-wallpaper .locations-options-container{
+    margin-bottom:60px}
+    .intro-wallpaper .locations-options-container .select-input{
+    padding:0 24px;
+    font-family:"Helvetica-Neue-Medium";
+    font-size:34px;
+    -webkit-transition:all .3s ease;
+    transition:all .3s ease;
+    border-bottom:1px solid rgba(0,0,0,.42)}
+    .intro-wallpaper .locations-options-container .MuiInput-underline:hover:not(.Mui-disabled):before{
+    border-bottom:1px solid #8e8e92}
+    .intro-wallpaper .locations-options-container .select-input .MuiSelect-select.MuiSelect-select{
+    padding-right:5px}
+    .intro-wallpaper .intro-wallpaper_bottom{
+    flex:unset}
+    .intro-wallpaper .name-input-container input{
+    border:0;
+    border-bottom:1px solid rgba(0,0,0,.42);
+    font-family:"Helvetica-Neue-Medium";
+    font-size:32px;
+    outline:0;
+    margin:15px 0 35px;
+    text-align:center}
+    @media only screen and (max-width:601px){
+    .intro-wallpaper .intro-wallpaper_top{
+    margin-top:50px;
+    margin-bottom:40px}
+    .intro-wallpaper .gender-options-container{
+    margin:40px 0 50px}
+    .intro-wallpaper .gender-options-container>div{
+    margin:0 17px}
+    .intro-wallpaper .year-options-container{
+    margin-bottom:40px}
+    .intro-wallpaper::-webkit-scrollbar{
+    display:none}
+    .intro-wallpaper{
+    -ms-overflow-style:none}
+    .locations-options-container,.year-options-container{
+    margin-bottom:40px}
+    }
+    .gender-radio-container svg path{
+        -webkit-transition:all .3s ease;
+        transition:all .3s ease}
+        .gender-radio-container>label{
+        display:flex;
+        flex-direction:row-reverse;
+        justify-content:flex-end}
+        .gender-radio-container input{
+        display:none}
+        .gender-radio-container>label>.text{
+        font-family:"Roboto-Regular";
+        color:#414141;
+        font-size:16px;
+        text-align:left;
+        flex:1 1;
+        word-break:break-word}
+        .gender-radio-container{
+            -webkit-tap-highlight-color:transparent}
+        .gender-radio-container .checkbox-face svg#female-intro-icon path,.gender-radio-container .checkbox-face svg#g-intro-icon path,.gender-radio-container .checkbox-face svg#l-intro-icon path,.gender-radio-container .checkbox-face svg#male-intro-icon path,.gender-radio-container .checkbox-face svg#none-intro-icon path:first-child{
+        fill:#e6e6e6}
+        .gender-radio-container .checkbox-face svg#none-intro-icon path:last-child{
+        stroke:#e6e6e6}
+        .gender-radio-container [type=radio]:checked+.checkbox-face svg#female-intro-icon path{
+        fill:#ff5e5e}
+        .gender-radio-container [type=radio]:checked+.checkbox-face svg#male-intro-icon path{
+        fill:#0094ff}
+        .gender-radio-container [type=radio]:checked+.checkbox-face svg#g-intro-icon path{
+        fill:#7875ff}
+        .gender-radio-container [type=radio]:checked+.checkbox-face svg#l-intro-icon path,.gender-radio-container [type=radio]:checked+.checkbox-face svg#none-intro-icon path:first-child{
+        fill:#c275ff}
+        .gender-radio-container [type=radio]:checked+.checkbox-face svg#none-intro-icon path:last-child{
+        stroke:#c275ff}
+        .gender-radio-container [type=radio]:checked+.checkbox-face{
+        -webkit-animation-name:animation-select-gender;
+        animation-name:animation-select-gender;
+        -webkit-animation-duration:2s;
+        animation-duration:2s;
+        -webkit-animation-timing-function:cubic-bezier(.28,.84,.42,1);
+        animation-timing-function:cubic-bezier(.28,.84,.42,1)
+}
+.report-modal .report-radio-container .checkbox-face{
+    padding:10px 20px;
+    border-radius:30px;
+     background-clip:padding-box;
+     border:1px solid transparent;
+     position:relative;
+     background-color:#fff;
+      -webkit-transition:all .5s ease;
+    transition:all .5s ease
+}
+.report-modal .report-radio-container .checkbox-face:before{
+    content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    z-index:-1;
+    margin:-2px;
+    border-radius:inherit;
+    background:linear-gradient(20deg,#ee1c67,#bd23a0,#7b2ceb,#1cbbf6)
+}
+.report-modal .report-radio-container .checkbox-face .text{
+    font-size:14px;
+    font-family:"Helvetica-Neue-Regular";
+    background:linear-gradient(20deg,#ee1c67,#bd23a0,#7b2ceb,#1cbbf6);
+    background-size:100%;
+            
+    -webkit-text-fill-color:transparent;
+    -moz-text-fill-color:transparent;
+    -webkit-transition:all .5s ease;
+    transition:all .5s ease
+}
+    .report-modal .report-radio-container [type=checkbox]:checked+.checkbox-face{
+    background-color:transparent
+}
+    .report-modal .report-radio-container [type=checkbox]:checked+.checkbox-face .text{
+    -webkit-text-fill-color:#fff;
+    -moz-text-fill-color:#fff
+}
+.gender-radio-container .checkbox-face svg#female-intro-icon path,.gender-radio-container .checkbox-face svg#g-intro-icon path,.gender-radio-container .checkbox-face svg#l-intro-icon path,.gender-radio-container .checkbox-face svg#male-intro-icon path,.gender-radio-container .checkbox-face svg#none-intro-icon path:first-child{
+    fill:#e6e6e6}
+    .gender-radio-container .checkbox-face svg#none-intro-icon path:last-child{
+    stroke:#e6e6e6
+}
+.gender-radio-container [type=radio]:checked+.checkbox-face svg#female-intro-icon path{
+    fill:#ff5e5e
+}
+.gender-radio-container [type=radio]:checked+.checkbox-face svg#male-intro-icon path{
+    fill:#0094ff
+}
+.gender-radio-container [type=radio]:checked+.checkbox-face svg#g-intro-icon path{
+    fill:#7875ff
+}
+.gender-radio-container [type=radio]:checked+.checkbox-face svg#l-intro-icon path,.gender-radio-container [type=radio]:checked+.checkbox-face svg#none-intro-icon path:first-child{
+    fill:#c275ff
+}
+.gender-radio-container [type=radio]:checked+.checkbox-face svg#none-intro-icon path:last-child{
+    stroke:#c275ff
+}
+.gender-radio-container [type=radio]:checked+.checkbox-face{
+    -webkit-animation-name:animation-select-gender;
+    animation-name:animation-select-gender;
+    -webkit-animation-duration:2s;
+    animation-duration:2s;
+    -webkit-animation-timing-function:cubic-bezier(.28,.84,.42,1);
+    animation-timing-function:cubic-bezier(.28,.84,.42,1)
+}
+
+.chonok {
+    border: none;
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}

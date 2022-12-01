@@ -14,6 +14,12 @@ from . tokens import generate_token
 def home(request):
     return render(request, 'home.html')
 
+def chat(request):
+    return render(request, 'chat.html')
+
+def profile(request):
+    return render(request, 'profile.html')
+
 def authentication(request):
     return render(request, "authentication/index.html")
 
@@ -122,3 +128,4 @@ def activate(request,uidb64,token):
         return redirect('signin')
     else:
         return render(request,'activation_failed.html') 
+

@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<div id="root">
+    <div class="intro-wallpaper">
+        <div class="intro-wallpaper_top">
+            <div class="lable">Giới tính của bạn là...</div>
+            <div class="gender-options-container">
+                <div>
+                    <div class="gender-radio-container">
+                        <label>
+                            <input class="browser-default" type="radio" name="gender-intro" value="F">
+                            <div class="checkbox-face">
+                                <svg id="female-intro-icon" width="37" height="97" viewBox="0 0 37 97" fill="none">
+                                    <path
+                                        d="M24.209 91.5192L28.232 80.2382C28.121 73.1012 24.279 77.3292 18.115 77.3292C13.951 77.3292 8.111 73.1012 8 80.2382L11.021 91.5192C11 92 12.169 95.2392 12.74 95.8882C13.311 96.5372 14.131 96.9092 14.996 96.9092H20.234C21.097 96.9092 21.92 96.5372 22.488 95.8882C23.059 95.2392 24 92 24.209 91.5192ZM17.416 91.9102L13.973 79.8382C13.989 79.7082 13.998 79.5782 13.998 79.4472C13.998 75.5222 14.189 78.2382 18.115 78.2382C21.041 78.2382 21.234 76.5222 21.234 80.4472C21.234 80.5782 21.242 79.7082 21.259 79.8382L17.814 91.9102H17.416Z"
+                                        fill="#FF5E5E"></path>
+                                    <path
+                                        d="M36.2138 77.651L31.2368 47.37C31.1258 40.233 25.2838 34.461 18.1198 34.461C10.9558 34.461 5.11584 40.233 5.00484 47.37L0.0258312 77.651C-0.0871688 78.507 0.173833 79.371 0.744833 80.02C1.31583 80.669 2.13584 81.041 3.00084 81.041H33.2388C34.1018 81.041 34.9248 80.669 35.4928 80.02C36.0638 79.371 36.3258 78.507 36.2138 77.651ZM6.42084 75.042L10.9778 47.97C10.9938 47.84 11.0028 47.71 11.0028 47.579C11.0028 43.654 14.1938 40.461 18.1198 40.461C22.0458 40.461 25.2388 43.654 25.2388 47.579C25.2388 47.71 25.2468 47.84 25.2638 47.97L29.8188 75.042H6.42084Z"
+                                        fill="#FF5E5E"></path>
+                                    <path
+                                        d="M18.1197 29.334C26.2077 29.334 32.7877 22.754 32.7877 14.666C32.7877 6.579 26.2077 0 18.1197 0C10.0317 0 3.45374 6.579 3.45374 14.666C3.45374 22.754 10.0327 29.334 18.1197 29.334ZM18.1197 6C22.8987 6 26.7877 9.888 26.7877 14.666C26.7877 19.445 22.8987 23.334 18.1197 23.334C13.3407 23.334 9.45374 19.445 9.45374 14.666C9.45374 9.888 13.3407 6 18.1197 6Z"
+                                        fill="#FF5E5E">
+
+                                    </path>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="gender-radio-container">
+                        <label><input class="browser-default" type="radio" name="gender-intro" value="M" checked="">
+                            <div class="checkbox-face"><svg id="male-intro-icon" width="30" height="99"
+                                    viewBox="0 0 30 99" fill="none">
+                                    <path
+                                        d="M22.7601 92.651L27.7831 47.37C27.6721 40.233 21.8301 34.461 14.6661 34.461C7.50215 34.461 1.66215 40.233 1.55115 47.37L6.57214 92.651C6.57214 93.5 7.72015 96.371 8.29115 97.02C8.86215 97.669 9.68215 98.041 10.5471 98.041H18.7851C19.6481 98.041 20.4711 97.669 21.0391 97.02C21.6101 96.371 22.7601 93.5 22.7601 92.651ZM12.9671 92.042L7.52415 47.97C7.54015 47.84 7.54915 47.71 7.54915 47.579C7.54915 43.654 10.7401 40.461 14.6661 40.461C18.5921 40.461 21.7851 43.654 21.7851 47.579C21.7851 47.71 21.7932 47.84 21.8102 47.97L16.3651 92.042H12.9671Z"
+                                        fill="#0094FF"></path>
+                                    <path
+                                        d="M14.666 29.334C22.754 29.334 29.334 22.754 29.334 14.666C29.334 6.579 22.754 0 14.666 0C6.578 0 0 6.579 0 14.666C0 22.754 6.579 29.334 14.666 29.334ZM14.666 6C19.445 6 23.334 9.888 23.334 14.666C23.334 19.445 19.445 23.334 14.666 23.334C9.887 23.334 6 19.445 6 14.666C6 9.888 9.887 6 14.666 6Z"
+                                        fill="#0094FF">
+
+                                    </path>
+                                </svg>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="lable">Tên bạn là...</div>
+            <div class="name-input-container">
+                <input id="name" type="text" value=""
+                    style="color: rgb(0, 148, 255); border-bottom-color: rgb(0, 148, 255);">
+            </div>
+            <div class="lable">Bạn sinh năm nào?</div>
+            <div class="sub-lable">Để tụi tui tìm người phù hợp theo lứa tuổi của bạn</div>
+            <div class="year-options-container">
+                <div id="edit-year-icon-decrease">
+                    <svg width="23" height="30" viewBox="0 0 23 30" fill="none">
+                        <path
+                            d="M2.2289 16.9598L2.22879 16.9597C1.35649 16.3646 0.999828 15.6568 0.999977 15.0016L0.999977 15.0013C0.999977 14.3484 1.36031 13.6391 2.23519 13.0414L18.9578 1.63404L18.9585 1.63358C19.6324 1.17306 20.2025 1 20.5808 1C20.9072 1 21.1114 1.11545 21.2622 1.31361C21.4373 1.54369 21.6 1.97295 21.6 2.67005L21.6 27.3261C21.6 28.0241 21.4371 28.4543 21.2614 28.6851C21.1101 28.884 20.9049 29 20.5769 29C20.1961 29 19.6131 28.8245 18.9446 28.368L18.9444 28.3678L2.2289 16.9598Z"
+                            stroke="#444444" stroke-width="2">
+
+                        </path>
+
+                    </svg>
+                </div>
+                <div class="content" style="color: rgb(0, 148, 255);">
+                    <div id="time-part-wrapper">
+                    </div>
+                </div>
+                <div id="edit-year-icon-increase">
+                    <svg width="23" height="30" viewBox="0 0 23 30" fill="none">
+                        <path
+                            d="M20.3711 13.0402L20.3712 13.0403C21.2435 13.6354 21.6001 14.3432 21.6 14.9984V14.9987C21.6 15.6516 21.2397 16.3609 20.3648 16.9586L3.64214 28.366L3.64147 28.3664C2.96754 28.8269 2.39753 29 2.01916 29C1.69281 29 1.48855 28.8846 1.33776 28.6864C1.16267 28.4563 1 28.027 1 27.33V2.67394C1 1.97588 1.16291 1.54567 1.33856 1.31489C1.48991 1.11603 1.69512 1 2.02306 1C2.40387 1 2.9869 1.17552 3.65533 1.63203L3.6556 1.63221L20.3711 13.0402Z"
+                            stroke="#444444" stroke-width="2">
+                        </path>
+                    </svg>
+                </div>
+            </div>
+            <div class="lable">Bạn ở tỉnh/thành phố nào?</div>
+            <div class="sub-lable">Để tụi tui tìm người gần khu vực của bạn</div>
+            <div class="locations-options-container">
+                <div class="MuiInputBase-root MuiInput-root select-input"
+                    style="color: rgb(0, 148, 255); border-bottom-color: rgb(0, 148, 255);">
+                    <select id="city" name="city"
+                        style="font-size:30px; font-family: 'Helvetica-Neue-Medium'; text-align:center;">
+                        <div id="option" class="option" name="option" style="border: none;">
+                            <option value="">Hà Nội</option>
+                            <option value="Cần Giờ">Cần Giờ</option>
+                            <option value="Củ Chi">Củ Chi</option>
+                            <option value="Ho Chi Minh City">Hồ Chí Minh</option>
+                            <option value="Ho Chi Minh City">Bến Tre</option>
+                            <option value="Ho Chi Minh City">Cà Mau</option>
+                        </div>
+                    </select>
+                    </svg>
+                </div>
+            </div>
+            <div class="gradient-btn-wallpaper_asjhc">
+                <button id="btn" class="chonok" style="color:#f4f7f9;background-color: rgb(0, 148, 255)"> OK
+                </button>
+            </div>
+            <div class="intro-wallpaper_bottom">
+                <div class="lang-container">
+                    <div class="clock-ui-wallpaper">
+                        <div class="load-wrapp">
+                            <div class="line">
+
+                            </div>
+                            <div class="line">
+
+                            </div>
+                            <div class="line">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    const incrementCount = document.getElementById("edit-year-icon-increase");
+    const decrementCount = document.getElementById("edit-year-icon-decrease");
+
+    // Select total count
+    const totalCount = document.getElementById("time-part-wrapper");
+
+    // Variable to track count
+    var count = 2000;
+
+    // Display initial count value
+    totalCount.innerHTML = count;
+
+    // Function to increment count
+    const handleIncrement = () => {
+        count++;
+        totalCount.innerHTML = count;
+    };
+
+    // Function to decrement count
+    const handleDecrement = () => {
+        count--;
+        totalCount.innerHTML = count;
+    };
+
+    // Add click event to buttons
+    incrementCount.addEventListener("click", handleIncrement);
+    decrementCount.addEventListener("click", handleDecrement);
+
+    const female = document.getElementById('female-intro-icon');
+    const male = document.getElementById('male-intro-icon');
+
+    female.addEventListener('click', function onClick(event) {
+        const name = document.getElementById('name');
+        const age = document.getElementById('time-part-wrapper');
+        const city = document.getElementById('city');
+        const btn = document.getElementById('btn');
+        name.style.color = 'rgb(255, 94, 94)';
+        age.style.color = 'rgb(255, 94, 94)';
+        name.style.borderBottomColor = 'rgb(255, 94, 94)';
+        city.style.color = 'rgb(255, 94, 94)';
+    });
+
+    male.addEventListener('click', function onClick(event) {
+        const name = document.getElementById('name');
+        const age = document.getElementById('time-part-wrapper');
+        const city = document.getElementById('city');
+
+        name.style.color = 'rgb(0, 148, 255)';
+        name.style.borderBottomColor = 'rgb(0, 148, 255)';
+        age.style.color = 'rgb(0, 148, 255)';
+        city.style.color = 'rgb(0, 148, 255)';
+    });
+
+</script>
+{% endblock %}
