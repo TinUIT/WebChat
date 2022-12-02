@@ -1,9 +1,6 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
-class User_chat (models.Model):
-    username = models.CharField(default="", max_length= 10)
-    email = models.CharField(default="", max_length= 20)
-    firstname = models.CharField(default="", max_length= 20)
-    lastname = models.CharField(default="", max_length= 20)
-    password = models.CharField(default="", max_length= 20)
+class Profile (models.Model):
+    User = models.ForeignKey(User, on_delete=models.CASCADE)
+    
