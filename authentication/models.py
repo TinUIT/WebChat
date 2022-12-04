@@ -6,6 +6,6 @@ class Profile (models.Model):
         ("M","male"),
         ("F","female")
     ]
-    user = models.ForeignKey(User, on_delete=models.CASCADE, primary_key=True,default="",unique=True)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True,default="")
     birthday = models.DateField(blank=True,null=True)
     gender = models.CharField(max_length=6,choices=GENDER, default="M")
