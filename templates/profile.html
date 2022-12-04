@@ -2,7 +2,8 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/profile.css' %}">
-<div id="root">
+<div class="container" style="width:100%; background:#E4E9F7;"> 
+<div id="root" class="root" style="background:#2c3e50;width:80%;">    
     <div class="intro-wallpaper">
         <div class="intro-wallpaper_top">
             <div class="lable">Giới tính của bạn là...</div>
@@ -51,7 +52,7 @@
             <div class="lable">Tên bạn là...</div>
             <div class="name-input-container">
                 <input id="name" type="text" value=""
-                    style="color: rgb(0, 148, 255); border-bottom-color: rgb(0, 148, 255);">
+                    style="color: rgb(0, 148, 255); border-bottom-color: rgb(0, 148, 255);border-radius: 5px">
             </div>
             <div class="lable">Bạn sinh năm nào?</div>
             <div class="sub-lable">Để tụi tui tìm người phù hợp theo lứa tuổi của bạn</div>
@@ -82,7 +83,37 @@
             <div class="lable">Bạn ở tỉnh/thành phố nào?</div>
             <div class="sub-lable">Để tụi tui tìm người gần khu vực của bạn</div>
             <div class="locations-options-container">
-                <div class="MuiInputBase-root MuiInput-root select-input"
+                 <details class="custom-select">
+                    <summary class="radios">
+                        <input type="radio" name="item" id="default" title="--Tỉnh--" checked>
+                        <input type="radio" name="item" id="item1" title="Hà Nội">
+                        <input type="radio" name="item" id="item2" title="Cần Giờ">
+                        <input type="radio" name="item" id="item3" title="Củ Chi">
+                        <input type="radio" name="item" id="item4" title="Hồ Chí Minh">
+                        <input type="radio" name="item" id="item5" title="Bến Tre">
+                    </summary>
+                    <ul class="list">
+                        <li class="onlist">
+                            <label for="item1">
+                                Hà Nội
+                                <span></span>
+                            </label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item2">Cần Giờ</label>
+                        </li class="onlist">
+                        <li class="onlist">
+                            <label for="item3">Củ Chi</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item4">Hồ Chí Minh</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item5">Bến Tre</label>
+                        </li>
+                    </ul>
+                </details>
+                {% comment %} <div class="MuiInputBase-root MuiInput-root select-input"
                     style="color: rgb(0, 148, 255); border-bottom-color: rgb(0, 148, 255);">
                     <select id="city" name="city"
                         style="font-size:30px; font-family: 'Helvetica-Neue-Medium'; text-align:center;">
@@ -96,10 +127,10 @@
                         </div>
                     </select>
                     </svg>
-                </div>
+                </div>  {% endcomment %}
             </div>
-            <div class="gradient-btn-wallpaper_asjhc">
-                <button id="btn" class="chonok" style="color:#f4f7f9;background-color: rgb(0, 148, 255)"> OK
+            <div class="gradient-btn-wallpaper_asjhc" style="background:none">
+                <button id="btn" class="chonok" > OK
                 </button>
             </div>
             <div class="intro-wallpaper_bottom">
@@ -121,6 +152,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <script>
     const incrementCount = document.getElementById("edit-year-icon-increase");
