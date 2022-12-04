@@ -14,6 +14,7 @@ body {
   }
   
   #frame {
+    font-family:'Poppins', sans-serif;
     width: 100%;
     /* min-width: 360px;
     max-width: 1000px; */
