@@ -2,24 +2,23 @@
 {% load static %}
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}">
-<div class="groups">
-    <p>Friends</p>
-    <img src="{% static 'pictures/user-1.png' %}" id="user-1">
-    <img src="{% static 'pictures/user-2.png' %}" id="user-2">
-    <img src="{% static 'pictures/user-3.png' %}" id="user-3">
-    <div id="per1">
-        Nguyễn Minh</div>
-    <div id="per1_ib">Chào bạn.</div>
-    <div id="per2">Văn Cường</div>
-    <div id="per2_ib">Chúc bạn gặp nhiều may mắn.</div>
-    <div id="per3">Cỏ ba lá</div>
-    <div id="per3_ib">Điều ước của bạn là gì?</div>
 
+<div class="text-home">
+    <h2>Welcome Back, Mike Ross</h2>
+    <img class="img-home" src="https://cdn-icons-png.flaticon.com/512/745/745205.png" alt="logo">
+    <h4>Start Conversation with your contacts</h4>
+    <p>Vanished when I saw your face<br>
+    All I can say is, it was enchanting to meet you,</p>
+    <!--<div class="button">
+        <a href="" class="btn btn-primary">Meet Now</a>
+        <a href="" class="btn btn-light">Start Chat</a>
+    </div>-->
 </div>
+
 <button class="chat" onclick="location.href=google.com">
-    <a href="https://www.google.com/" style="color:black;">Chat to strangers</a><!-- link html match bạn  -->
+    <a href="https://www.google.com/" style="color:black;">Start Chat</a><!-- link html match bạn  -->
 </button>
 <button class="call" onclick="location.href=google.com">
-    <a href="https://www.google.com/" style="color:black;">Call to strangers</a><!-- link html match bạn  -->
+    <a href="https://www.google.com/" style="color:black;">Meet Now</a><!-- link html match bạn  -->
 </button>
 {% endblock %}
