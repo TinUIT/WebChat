@@ -20,17 +20,36 @@ peerapp = (function() {
             peer.disconnect()
         }
         peer = new Peer(myPeerID, { host: PEER_SERVER, port: PORT, path: '/'});  
+        peer.on('open', fetchOnlinePeers);
+        peer.on('connection', connect);
+        peer.on('close', function(conn) {
+            // New connection requests from users
+            console.log("Peer connection closed");
+        });
+
+        peer.on('disconnected', function(conn) {
+            console.log("Peer connection disconnected : " + conn);
+            console.log(new Date());
+            if(conn != myPeerID) {
+                return
+            }            
+            setTimeout(function () {
+                connectToServerWithId();
+            }, 5000);
+            
+            // peer.reconnect()
+        });
     }    
     console.log(peer)
 
     // Data channel
     // Handle a Text and File connection objects
     function connect(c) {
-        console.log(c)
+
         // Handle a chat connection.
         if (c.label === 'chat') {
-            myapp.createChatWindow(c.peer)
-
+            // myapp.createChatWindow(c.peer)
+            console.log(c.peer)
             c.on('data', function(data) {
                 console.log(c.peer + ' : ' + data);
                 // Append data to chat history
@@ -60,6 +79,7 @@ peerapp = (function() {
             c.on('open', function() {
                 connect(c);
             });
+            c.on()
             c.on('error', function(err) { alert(err); });
         }
     }
@@ -69,6 +89,7 @@ peerapp = (function() {
         if(connectedPeers[peerId]) {
             var conn = connectedPeers[peerId]
             conn.send(msgText)
+            console.log(conn)
         }
     }
 

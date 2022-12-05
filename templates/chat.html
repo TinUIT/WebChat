@@ -153,19 +153,21 @@
 			
 		</div>
 		<div class="messages">
-			<ul>
-
+			<ul  id="history">
 			</ul>
 		</div>
 		<div class="message-input">
 			<div class="wrap">
-			<input type="text" placeholder="Write your message..." />
+			<input type="text" placeholder="Write your message..." id="message"/>
 			<i class="fa fa-paperclip attachment" aria-hidden="true"></i>
-			<button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+			<button class="submit" id="send"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script>
 	var username = "{{user_name}}"
 </script>
