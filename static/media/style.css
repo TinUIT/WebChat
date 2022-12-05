@@ -3,12 +3,13 @@ body {
     margin: 0;
     font-family:'Poppins', sans-serif;
     color: #ccc;
+    background: #2c3e50;
 }
 
 .plugin {
     position: relative;
     width: 100%;
-    height: 601px;
+    height: 100vh;
     padding: 0;
     background: #2c3e50;
 }

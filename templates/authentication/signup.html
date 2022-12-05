@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'media/sign_up.css' %}">
-    <title>Sign in</title>
+    <title>Sign up</title>
 </head>
 
 <body>
@@ -27,15 +27,17 @@
             <div id="text">
                 Sign up
             </div>
-            <form action="" method="post">
+            <form class="form" action="" method="post">
                 {% csrf_token %}
                 <label for="edit_email" id="text_email" >Enter your email address</label>
                 <input type="text" id="edit_email" name="edit_email" placeholder="Email address" >
                 <label for="edit_firstname" id="text_firstname" >First name</label>
-                <input type="text" id="edit_firstname" name="edit_firstname" placeholder="First name" >
-                <label for="edit_lastname" id="text_lastname" >Last name</label>
-                <input type="text" id="edit_lastname" name="edit_lastname" placeholder="Last name" >
-                <label for="edit_username" id="text_username" >User name</label>
+                <div class="fullname" >
+                    <input type="text" id="edit_firstname" name="edit_firstname" placeholder="First name" >
+                    <label for="edit_lastname" id="text_lastname" >Last name</label>
+                    <input type="text" id="edit_lastname" name="edit_lastname" placeholder="Last name" >
+                    <label for="edit_username" id="text_username" >User name</label>
+                </div>
                 <input type="text" id="edit_username" name="edit_username" placeholder="User name" >
                 <label for="edit_password" id="text_password" >Enter your Password</label>
                 <input type="password" id="edit_password" name="edit_password" placeholder="Password" >
