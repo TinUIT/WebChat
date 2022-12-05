@@ -10,15 +10,37 @@ from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.utils.encoding import force_bytes,force_str
 from . tokens import generate_token
+from .models import Profile
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url="authentication")
 def home(request):
     return render(request, 'home.html')
 
+@login_required(login_url="authentication")
 def chat(request):
     return render(request, 'chat.html')
 
+@login_required(login_url="authentication")
 def profile(request):
-    return render(request, 'profile.html')
+    context={}
+    ch = Profile.objects.filter(user__id=request.user.id)
+    if len(ch)>0:
+        data = Profile.objects.get(user__id=request.user.id)
+        context["data"] = data
+    # else:
+    #     return redirect('home')
+    if request.method == "POST":
+        rname = request.POST.get('name')
+        genderr = request.POST.get('gender')
+        bd =request.POST.get('birthday')
+        ct =request.POST.get('item')
+        data.name= rname
+        data.gender=genderr
+        data.birthday=bd
+        data.city=ct
+        data.save()
+    return render(request, "profile.html",context)
 
 def authentication(request):
     return render(request, "authentication/index.html")
@@ -32,7 +54,6 @@ def signup(request):
         email = request.POST.get('edit_email')
         pass1 = request.POST.get('edit_password')
         pass2 = request.POST.get('edit_re_enter_password')
-        
         if User.objects.filter(username=username):
             messages.error(request, "Username already exist! Please try some other username.")
             return redirect('signup')
@@ -59,7 +80,6 @@ def signup(request):
         myuser.is_active = False
         myuser.save()
         messages.success(request, "Your Account has been created succesfully!! Please check your email to confirm your email address in order to activate your account.")
-
         subject = "Welcome !!"
         message = "Hello " + myuser.first_name + "!! \n" + "Welcome !! \nThank you for visiting our website.\nWe have also sent you a confirmation email, please confirm your email address."        
         from_email = settings.EMAIL_HOST_USER
@@ -83,7 +103,7 @@ def signup(request):
         )
         email.fail_silently = True
         email.send()
-        
+
         return redirect('signin')
         
         

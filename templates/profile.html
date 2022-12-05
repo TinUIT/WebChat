@@ -3,7 +3,10 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 <div class="container" style="width:100%; background:#E4E9F7;"> 
+    <form action="" method="post">
+       
 <div id="root" class="root" style="background:#2c3e50;width:80%;">    
+    
     <div class="intro-wallpaper">
         <div class="intro-wallpaper_top">
             <div class="lable">Giới tính của bạn là...</div>
@@ -11,7 +14,7 @@
                 <div>
                     <div class="gender-radio-container">
                         <label>
-                            <input class="browser-default" type="radio" name="gender-intro" value="F">
+                            <input class="browser-default" type="radio" name="gender" value="F">
                             <div class="checkbox-face">
                                 <svg id="female-intro-icon" width="37" height="97" viewBox="0 0 37 97" fill="none">
                                     <path
@@ -32,7 +35,7 @@
                 </div>
                 <div>
                     <div class="gender-radio-container">
-                        <label><input class="browser-default" type="radio" name="gender-intro" value="M" checked="">
+                        <label><input class="browser-default" type="radio" name="gender" value="M" checked="">
                             <div class="checkbox-face"><svg id="male-intro-icon" width="30" height="99"
                                     viewBox="0 0 30 99" fill="none">
                                     <path
@@ -51,7 +54,8 @@
             </div>
             <div class="lable">Tên bạn là...</div>
             <div class="name-input-container">
-                <input id="name" type="text" value=""
+                {% csrf_token %}
+                <input id="name" type="text" name="name" value="{{data.name}}"
                     style="color: rgb(0, 148, 255); border-bottom-color: rgb(0, 148, 255);border-radius: 5px">
             </div>
             <div class="lable">Bạn sinh năm nào?</div>
@@ -64,8 +68,9 @@
                             stroke="#444444" stroke-width="2">
 
                         </path>
-
+                        
                     </svg>
+                   
                 </div>
                 <div class="content" style="color: rgb(0, 148, 255);">
                     <div id="time-part-wrapper">
@@ -84,33 +89,272 @@
             <div class="sub-lable">Để tụi tui tìm người gần khu vực của bạn</div>
             <div class="locations-options-container">
                  <details class="custom-select">
-                    <summary class="radios">
-                        <input type="radio" name="item" id="default" title="--Tỉnh--" checked>
-                        <input type="radio" name="item" id="item1" title="Hà Nội">
-                        <input type="radio" name="item" id="item2" title="Cần Giờ">
-                        <input type="radio" name="item" id="item3" title="Củ Chi">
-                        <input type="radio" name="item" id="item4" title="Hồ Chí Minh">
-                        <input type="radio" name="item" id="item5" title="Bến Tre">
+                    <summary class="radios" >
+                        <input type="radio" name="item" id="default" title="{{data.city}}"value="{{data.city}}"  checked>
+                        <input type="radio" name="item" id="item1" title="An Giang" value="An Giang">
+                        <input type="radio" name="item" id="item2" title="Bà Rịa-Vũng Tàu" value="Bà Rịa-Vũng Tàu">
+                        <input type="radio" name="item" id="item3" title="Bạc Liêu" value="Bạc Liêu">
+                        <input type="radio" name="item" id="item4" title="Bắc Giang" value="Bắc Giang" >
+                        <input type="radio" name="item" id="item5" title="Bắc Kạn" value="Bắc Kạn">
+                        <input type="radio" name="item" id="item6" title="Bắc Ninh" value="Bắc Ninh">
+                        <input type="radio" name="item" id="item7" title="Bến Tre" value="Bến Tre">
+                        <input type="radio" name="item" id="item8" title="Bình Dương" value="Bình Dương">
+                        <input type="radio" name="item" id="item9" title="Bình Định" value="Bình Định" >
+                        <input type="radio" name="item" id="item10" title="Bình Phước" value="Bình Phước">
+                        <input type="radio" name="item" id="item11" title="Bình Thuận" value="Bình Thuận">
+                        <input type="radio" name="item" id="item12" title="Cà Mau" value="Cà Mau">
+                        <input type="radio" name="item" id="item13" title="Cao Bằng" value="Cao Bằng">
+                        <input type="radio" name="item" id="item14" title="Cần Thơ" value="Cần Thơ" >
+                        <input type="radio" name="item" id="item15" title="Đà Nẵng" value="Đà Nẵng">
+                        <input type="radio" name="item" id="item16" title="Đắk Lắk" value="Đắk Lắk">
+                        <input type="radio" name="item" id="item17" title="Đắk Nông" value="Đắk Nông">
+                        <input type="radio" name="item" id="item18" title="Điện Biên" value="Điện Biên">
+                        <input type="radio" name="item" id="item19" title="Đồng Nai" value="Đồng Nai" >
+                        <input type="radio" name="item" id="item20" title="Đồng Tháp" value="Đồng Tháp">
+                        <input type="radio" name="item" id="item21" title="Gia Lai" value="Gia Lai">
+                        <input type="radio" name="item" id="item22" title="Hà Giang" value="Hà Giang">
+                        <input type="radio" name="item" id="item23" title="Hà Nam" value="Hà Nam">
+                        <input type="radio" name="item" id="item24" title="Hà Nội" value="Hà Nội" >
+                        <input type="radio" name="item" id="item25" title="Hà Tây" value="Hà Tây">
+                        <input type="radio" name="item" id="item6" title="Hà Tĩnh" value="Hà Tĩnh">
+                        <input type="radio" name="item" id="item7" title="Hải Dương" value="Hải Dương">
+                        <input type="radio" name="item" id="item8" title="Hải Phòng" value="Hải Phòng">
+                        <input type="radio" name="item" id="item9" title="Hòa Bình" value="Hòa Bình" >
+                        <input type="radio" name="item" id="item30" title="Hồ Chí Minh" value="Hồ Chí Minh">
+                        <input type="radio" name="item" id="item31" title="Hậu Giang" value="Hậu Giang">
+                        <input type="radio" name="item" id="item32" title="Hưng Yên" value="Hưng Yên">
+                        <input type="radio" name="item" id="item33" title="Khánh Hòa" value="Khánh Hòa">
+                        <input type="radio" name="item" id="item34" title="Kiên Giang" value="Kiên Giang" >
+                        <input type="radio" name="item" id="item35" title="Kon Tum" value="Kon Tum">
+                        <input type="radio" name="item" id="item36" title="Lai Châu" value="Lai Châu">
+                        <input type="radio" name="item" id="item37" title="Lào Cai" value="Lào Cai">
+                        <input type="radio" name="item" id="item38" title="Lạng Sơn" value="Lạng Sơn">
+                        <input type="radio" name="item" id="item39" title="Lâm Đồng" value="Lâm Đồng" >
+                        <input type="radio" name="item" id="item40" title="Long An" value="Long An">
+                        <input type="radio" name="item" id="item41" title="Nam Định" value="Nam Định">
+                        <input type="radio" name="item" id="item42" title="Nghệ An" value="Nghệ An">
+                        <input type="radio" name="item" id="item43" title="Ninh Bình" value="Ninh Bình">
+                        <input type="radio" name="item" id="item44" title="Ninh Thuận" value="Ninh Thuận" >
+                        <input type="radio" name="item" id="item45" title="Phú Thọ" value="Phú Thọ">
+                        <input type="radio" name="item" id="item46" title="Phú Yên" value="Phú Yên">
+                        <input type="radio" name="item" id="item47" title="Quảng Bình" value="Quảng Bình">
+                        <input type="radio" name="item" id="item48" title="Quảng Nam" value="Quảng Nam">
+                        <input type="radio" name="item" id="item49" title="Quảng Ngãi" value="Quảng Ngãi" >
+                        <input type="radio" name="item" id="item50" title="Quảng Ninh" value="Quảng Ninh">
+                        <input type="radio" name="item" id="item51" title="Quảng Trị" value="Quảng Trị">
+                        <input type="radio" name="item" id="item52" title="Sóc Trăng" value="Sóc Trăng">
+                        <input type="radio" name="item" id="item53" title="Sơn La" value="Sơn La">
+                        <input type="radio" name="item" id="item54" title="Tây Ninh" value="Tây Ninh" >
+                        <input type="radio" name="item" id="item55" title="Thái Bình" value="Thái Bình">
+                        <input type="radio" name="item" id="item56" title="Thái Nguyên" value="Thái Nguyên">
+                        <input type="radio" name="item" id="item57" title="Thanh Hóa" value="Thanh Hóa">
+                        <input type="radio" name="item" id="item58" title="Thừa Thiên - Huế" value="Thừa Thiên - Huế">
+                        <input type="radio" name="item" id="item59" title="Tiền Giang" value="Tiền Giang" >
+                        <input type="radio" name="item" id="item60" title="Trà Vinh" value="Trà Vinh">
+                        <input type="radio" name="item" id="item61" title="Tuyên Quang" value="Tuyên Quang">
+                        <input type="radio" name="item" id="item62" title="Vĩnh Long" value="Vĩnh Long">
+                        <input type="radio" name="item" id="item63" title="Vĩnh Phúc" value="Vĩnh Phúc" >
+                        <input type="radio" name="item" id="item64" title="Yên Bái" value="Yên Bái">
                     </summary>
                     <ul class="list">
                         <li class="onlist">
-                            <label for="item1">
-                                Hà Nội
+                            <label for="default">
+                                {{ data.city }}
                                 <span></span>
                             </label>
                         </li>
                         <li class="onlist">
-                            <label for="item2">Cần Giờ</label>
+                            <label for="item1">An Giang{% comment %} <span></span> {% endcomment %}</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item2">Bà Rịa-Vũng Tàu</label>
                         </li class="onlist">
                         <li class="onlist">
-                            <label for="item3">Củ Chi</label>
+                            <label for="item3">Bạc Liêu</label>
                         </li>
                         <li class="onlist">
-                            <label for="item4">Hồ Chí Minh</label>
+                            <label for="item4">Bắc Kạn</label>
                         </li >
                         <li class="onlist">
-                            <label for="item5">Bến Tre</label>
+                            <label for="item5">Bắc Giang</label>
                         </li>
+                        <li class="onlist">
+                            <label for="item6">Bắc Ninh</label>
+                        </li class="onlist">
+                        <li class="onlist">
+                            <label for="item7">Bến Tre</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item8">Bình Dương</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item9">Bình Định</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item10">Bình Phước</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item11">Bình Thuận{% comment %} <span></span> {% endcomment %}</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item12">Cà Mau</label>
+                        </li class="onlist">
+                        <li class="onlist">
+                            <label for="item3">Cao Bằng</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item14">Cần Thơ</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item15">Đà Nẵng</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item16">Đắk Lắk</label>
+                        </li class="onlist">
+                        <li class="onlist">
+                            <label for="item17">Đắk Nông</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item18">Điện Biên</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item19">Đồng Nai</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item20">Đồng Tháp</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item21">Gia Lai{% comment %} <span></span> {% endcomment %}</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item22">Hà Giang</label>
+                        </li class="onlist">
+                        <li class="onlist">
+                            <label for="item23">Hà Nam</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item24">Hà Nội</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item25">Hà Tây</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item26">Hà Tĩnh</label>
+                        </li class="onlist">
+                        <li class="onlist">
+                            <label for="item27">Hải Dương</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item28">Hải Phòng </label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item29">Hòa Bình</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item30">Hồ Chí Minh</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item31">Hậu Giang{% comment %} <span></span> {% endcomment %}</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item32">Hưng Yên</label>
+                        </li class="onlist">
+                        <li class="onlist">
+                            <label for="item33">Khánh Hòa</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item34">Kiên Giang</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item35">Kon Tum</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item36">Lai Châu</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item37">Lào Cai</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item38">Lạng Sơn</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item39">Lâm Đồng</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item40">Long An</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item41">Nam Định{% comment %} <span></span> {% endcomment %}</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item42">Nghệ An</label>
+                        </li class="onlist">
+                        <li class="onlist">
+                            <label for="item43">Ninh Bình</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item44">Ninh Thuận</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item45">Phú Thọ</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item46">Phú Yên</label>
+                        </li class="onlist">
+                        <li class="onlist">
+                            <label for="item47">Quảng Bình</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item48">Quảng Nam</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item49">Quảng Ngãi</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item50">Quảng Ninh</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item51">Quảng Trị{% comment %} <span></span> {% endcomment %}</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item52">Sóc Trăng</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item53">Sơn La</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item54">Tây Ninh</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item55">Thái Bình</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item56">Thái Nguyên</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item57">Thanh Hóa</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item58">Thừa Thiên - Huế</label>
+                        </li >
+                        <li class="onlist">
+                            <label for="item59">Tiền Giang</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item60">Trà Vinh</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item61">Tuyên Quang{% comment %} <span></span> {% endcomment %}</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item62">Vĩnh Long</label>
+                        </li class="onlist">
+                        <li class="onlist">
+                            <label for="item63">Vĩnh Phúc</label>
+                        </li>
+                        <li class="onlist">
+                            <label for="item64">Yên Bái</label>
+                        </li >
                     </ul>
                 </details>
                 {% comment %} <div class="MuiInputBase-root MuiInput-root select-input"
@@ -132,6 +376,7 @@
             <div class="gradient-btn-wallpaper_asjhc" style="background:none">
                 <button id="btn" class="chonok" > OK
                 </button>
+                <input type="hidden"  id="birthday" name="birthday" >
             </div>
             <div class="intro-wallpaper_bottom">
                 <div class="lang-container">
@@ -151,19 +396,22 @@
                 </div>
             </div>
         </div>
+        
     </div>
 </div>
+</form>
 </div>
+
 <script>
     const incrementCount = document.getElementById("edit-year-icon-increase");
     const decrementCount = document.getElementById("edit-year-icon-decrease");
 
     // Select total count
     const totalCount = document.getElementById("time-part-wrapper");
-
+    const birthday = document.getElementById("birthday");
     // Variable to track count
-    var count = 2000;
-
+    var count = {{data.birthday}};
+    birthday.value= count;
     // Display initial count value
     totalCount.innerHTML = count;
 
@@ -171,12 +419,14 @@
     const handleIncrement = () => {
         count++;
         totalCount.innerHTML = count;
+        birthday.value++;
     };
 
     // Function to decrement count
     const handleDecrement = () => {
         count--;
         totalCount.innerHTML = count;
+        birthday.value--;
     };
 
     // Add click event to buttons
