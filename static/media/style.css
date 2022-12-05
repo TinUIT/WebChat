@@ -94,10 +94,11 @@ body {
 }
 .plugin img {
     position: absolute;
-    width: 610px;
+    width: 500px;
     height: auto;
-    left: 630px;
-    top: 88px;
+    left: 680px;
+    top: 120px;
+    border-radius: 40px;
 }
 
 .backgound1 {

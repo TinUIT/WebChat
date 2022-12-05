@@ -38,10 +38,11 @@ body {
 }
 .background1 img{
     position: absolute;
-    width: 650px;
+    width: 550px;
     height: auto;
-    left: 17px;
+    left: 60px;
     top: 100px;
+    border-radius: 40px;
 }
 .background1 .sign_in {
     position: absolute;
