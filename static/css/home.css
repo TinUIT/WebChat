@@ -6,6 +6,12 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif
 }
+.text-home{
+    flex-direction: column;
+    align-items: center;
+    line-height: 29px;
+    text-align: center;
+}
 .img-home{
     max-width: 100%;
     height: auto;
@@ -14,6 +20,15 @@ img{
     vertical-align: middle;
     border-style: none;
 }
+
+h2{
+    margin-bottom: 1.875rem !important;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin: 0px;
+    line-height: 1.5;
+    vertical-align: middle;
+}
 h4 {
     display: block;
     margin-block-start: 1.33em;
@@ -21,6 +36,7 @@ h4 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+    font-size: 1.6rem;
 }
 
 p {
@@ -29,10 +45,12 @@ p {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    margin-bottom: 2.5rem !important;
 }
 
 .btn {
     display: inline-block;
+    text-decoration: none;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     color: #737B8E;
@@ -57,7 +75,11 @@ p {
 
 .btn-primary {
     color: #fff;
-    background-color: #47B4AC;
-    border-color: #47B4AC;
-    box-shadow: 0px 4px 12px 0px rgb(71 180 172 / 50%);
+    background-color: #415a72;
+    border-color: #415a72;
+    box-shadow: 0px 4px 12px 0px #415a72(71 180 172 / 50%);
+}
+
+.button{
+    margin-bottom: 1.875rem !important;
 }
