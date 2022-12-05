@@ -6,13 +6,30 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+:root{
+    /* ===== Colors ===== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #2c3e50;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ====== Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.3s ease;
+    --tran-05: all 0.3s ease;
+}
+section .home{
+    background: var(--primary-color-light);
+}
 .text-home{
     flex-direction: column;
     align-items: center;
     line-height: 29px;
     text-align: center;
     color: var( --text-color);
-    background: var(--primary-color-light);
     transition: var(--tran-05);
 }
 .img-home{
@@ -52,6 +69,8 @@ p {
 }
 
 .btn {
+    width: 150px;
+    height: 45px;
     display: inline-block;
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
