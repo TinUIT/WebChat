@@ -46,10 +46,12 @@ function myjsapp(peerClient) {
             if(users.length == 0) {
                 return
             }
+            
             var random = Math.floor(Math.random()*users.length)
             if (toPeerId==null) {
                 toPeerId=users[random]
                 peerClient.connectToId(toPeerId)
+                $('.contact-profile').append('<p>'+toPeerId+'</p>')
                 console.log(toPeerId)
             }
         }
