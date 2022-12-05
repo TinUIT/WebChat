@@ -405,12 +405,12 @@
 <script>
     const incrementCount = document.getElementById("edit-year-icon-increase");
     const decrementCount = document.getElementById("edit-year-icon-decrease");
-
+    const name = document.getElementById("name");
     // Select total count
     const totalCount = document.getElementById("time-part-wrapper");
     const birthday = document.getElementById("birthday");
     // Variable to track count
-    var count = {{data.birthday}};
+    var count = 2000;
     birthday.value= count;
     // Display initial count value
     totalCount.innerHTML = count;
@@ -457,6 +457,10 @@
         age.style.color = 'rgb(0, 148, 255)';
         city.style.color = 'rgb(0, 148, 255)';
     });
+
+    if(name.value=='None') {
+        name.value = ""
+    }
 
 </script>
 {% endblock %}

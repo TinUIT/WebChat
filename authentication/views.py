@@ -13,13 +13,14 @@ from . tokens import generate_token
 from .models import Profile
 from django.contrib.auth.decorators import login_required
 
+user_name = ""
 @login_required(login_url="authentication")
 def home(request):
     return render(request, 'home.html')
 
 @login_required(login_url="authentication")
 def chat(request):
-    return render(request, 'chat.html')
+    return render(request, 'chat.html', {'user_name':user_name})
 
 @login_required(login_url="authentication")
 def profile(request):
@@ -110,6 +111,7 @@ def signup(request):
     return render(request, "authentication/signup.html")
 
 def signin(request):
+    global user_name
     if request.method == 'POST':
         username = request.POST['username']
         pass1 = request.POST['pass1']
@@ -118,7 +120,7 @@ def signin(request):
         
         if user is not None:
             login(request, user)
-            fname = user.first_name
+            user_name = username
             # messages.success(request, "Logged In Sucessfully!!")
             return redirect('home')
         else:
