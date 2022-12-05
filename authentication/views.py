@@ -18,6 +18,10 @@ def home(request):
     return render(request, 'home.html')
 
 @login_required(login_url="authentication")
+def videochat(request):
+    return render(request, 'videochat.html')
+
+@login_required(login_url="authentication")
 def chat(request):
     return render(request, 'chat.html')
 

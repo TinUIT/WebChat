@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/videochat.css' %}">
+    <title>Video Call</title>
+</head>
+<body>
+    <div class="header">
+        <!-- <div class="top-icons">
+            <img src="pictures/search.png" id="search">
+            <img src="pictures/menu.png">
+        </div> -->
+        <div class="row">
+            <div class="col1">
+                <img src="static\pictures\video.png" class="host-img">
+                <div class="contarols">
+                    <img src="static\pictures\chatt.png" id="chat" >
+                    <img src="static\pictures\disconnect.png" >
+                    <img src="static\pictures\call.png" id="call" >
+                    <img src="static\pictures\mic.png" >
+                    <img src="static\pictures\no-video.png" >
+                    <!-- màu nền của icon #2C3A4E -->
+                </div>
+            </div>
+            <div class="col2">
+                <div class="yourcamera">
+                    <p>You</p>
+                    <div>
+                        <img src="static\pictures\cam_me.png" >
+                    </div>
+                </div>
+                <div class="chat">
+                    <p>Chat</p>
+                    <div id="chat">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>   
+</body>
+</html>
