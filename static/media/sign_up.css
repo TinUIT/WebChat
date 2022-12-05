@@ -31,7 +31,8 @@ body{
     height: 400px;
     left: 0px;
     top: 0px;
-    background: #2c3e50;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(44,62,80,1) 35%, rgba(0,212,255,1) 100%);
 }
 .background1 img{
     position: absolute;
