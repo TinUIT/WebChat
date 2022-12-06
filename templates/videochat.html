@@ -19,9 +19,9 @@
             <div class="col1">
                 <img src="static\pictures\video.png" class="host-img">
                 <div class="contarols">
-                    <i class="fas fa-comment-slash" onclick="myFunction3(this)"></i>
-                    <i class="fas fa-phone-slash" style="color:#f41919; background:#dc6262; border-radius: 50%; font-size:40px; "></i>
+                    {% comment %} <i class="fas fa-comment-slash" onclick="myFunction3(this)"></i> {% endcomment %}
                     <i class="fas fa-microphone-slash" onclick="myFunction(this)"></i>
+                    <a href="/home"><i class="fas fa-phone" style="color:#f41919; border-radius: 50%; font-size:50px; "></i></a>
                     <i class="fas fa-video-slash" onclick="myFunction2(this)"></i>
     
                     <!-- màu nền của icon #2C3A4E -->
@@ -34,12 +34,12 @@
                         <img src="static\pictures\cam_me.png" >
                     </div>
                 </div>
-                <div class="chat">
+                {% comment %} <div class="chat">
                     <p>Chat</p>
                     <div id="chat">
                         
                     </div>
-                </div>
+                </div> {% endcomment %}
             </div>
         </div>
     </div>   
@@ -49,10 +49,10 @@
             x.classList.toggle("fa-microphone");
         }
 
-        function myFunction2(x) 
+        {% comment %} function myFunction2(x) 
         {
             x.classList.toggle("fa-video");
-        }
+        } {% endcomment %}
 
         function myFunction3(x) 
         {
