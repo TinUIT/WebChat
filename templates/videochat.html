@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/videochat.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Video Call</title>
 </head>
 <body>
@@ -17,11 +19,11 @@
             <div class="col1">
                 <img src="static\pictures\video.png" class="host-img">
                 <div class="contarols">
-                    <img src="static\pictures\chatt.png" id="chat" >
-                    <img src="static\pictures\disconnect.png" >
-                    <img src="static\pictures\call.png" id="call" >
-                    <img src="static\pictures\mic.png" >
-                    <img src="static\pictures\no-video.png" >
+                    <i class="fas fa-comment-slash" onclick="myFunction3(this)"></i>
+                    <i class="fas fa-phone-slash" style="color:#f41919; background:#dc6262; border-radius: 50%; font-size:40px; "></i>
+                    <i class="fas fa-microphone-slash" onclick="myFunction(this)"></i>
+                    <i class="fas fa-video-slash" onclick="myFunction2(this)"></i>
+    
                     <!-- màu nền của icon #2C3A4E -->
                 </div>
             </div>
@@ -41,5 +43,21 @@
             </div>
         </div>
     </div>   
+    <script>
+        function myFunction(x) 
+        {
+            x.classList.toggle("fa-microphone");
+        }
+
+        function myFunction2(x) 
+        {
+            x.classList.toggle("fa-video");
+        }
+
+        function myFunction3(x) 
+        {
+            x.classList.toggle("fa-comment");
+        }
+    </script>
 </body>
 </html>
