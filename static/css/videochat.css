@@ -43,17 +43,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
+
 }
-.contarols img{
-    width: 40px;
-    margin: 5px 10px;
+.contarols #icon{
+    font-size:20px;
+    color:#ccc;
+    
+}
+.contarols i{
+    margin: 20px 20px;
+    
+}
+.fas{
     cursor: pointer;
     transition: transform 0.5s;
+    font-size:30px;
+    color:#fff;
+    user-select: none;
 }
 .contarols #call{
     width: 60px;
 }
-.contarols img:hover{
+.fas:hover{
     transform:translateY(-10px)
 }
 .yourcamera{
@@ -61,6 +73,7 @@
     border-radius: 15px;
     padding: 10px 10px 10px;
     color: #ccc;
+    
 }
 .yourcamera div{
     margin-top: 10px;
@@ -86,5 +99,8 @@
     background: #32465a;
     border-radius: 15px;
     
+}
+.col1 .fas fa-microphone-slash{
+    color: #ccc;
 }
 
