@@ -27,12 +27,11 @@
 }
 .col1{
     flex-basis: 55%;
-    margin-left: 5%;
-
+    margin-left: 10%;
 }
 .col2{
-    flex-basis: 25%;
-    margin-right: 50px;
+    flex-basis: 20%;
+    margin-right: 7%;
 }
 
 .host-img{
