@@ -13,7 +13,6 @@ from . tokens import generate_token
 from .models import Profile
 from django.contrib.auth.decorators import login_required
 
-
 @login_required(login_url="authentication")
 def home(request):
     return render(request, 'home.html')
