@@ -15,6 +15,7 @@ urlpatterns = [
     path('signin', views.signin, name="signin"),
     path('signout', views.signout, name="signout"),
     path('videochat', views.videochat, name="videochat"),
+    path('changepassword', views.changepassword, name="changepassword"),
     path('activate/<uidb64>/<token>', views.activate, name='activate'),
     path(
         'change-password/',

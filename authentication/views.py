@@ -22,6 +22,10 @@ def videochat(request):
     return render(request, 'videochat.html')
 
 @login_required(login_url="authentication")
+def changepassword(request):
+    return render(request, 'changepassword.html')
+
+@login_required(login_url="authentication")
 def chat(request):
     return render(request, 'chat.html', {'user_name':request.user})
 
