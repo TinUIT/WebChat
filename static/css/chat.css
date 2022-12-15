@@ -40,10 +40,11 @@ body {
   overflow: hidden;
   position: relative;
 }
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 740px) {
   #frame #sidepanel {
-    width: 58px;
-    min-width: 58px;
+    /* width: 0px;
+    min-width: 0px; */
+    display: none;
   }
 }
 #frame #sidepanel #profile {
@@ -82,7 +83,7 @@ body {
   -webkit-transition: 0.3s height ease;
   transition: 0.3s height ease;
 }
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 740px) {
   #frame #sidepanel #profile .wrap {
     height: 55px;
   }
@@ -490,7 +491,7 @@ body {
     font-size: 1.3em;
   }
 }
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 740px) {
   #frame #sidepanel #bottom-bar button span {
     display: none;
   }
@@ -502,9 +503,9 @@ body {
   overflow: hidden;
   position: relative;
 }
-@media screen and (max-width: 735px) {
+@media screen and (max-width: 740px) {
   #frame .content {
-    width: calc(100% - 58px);
+    width: calc(100% - 3%);
     min-width: 300px !important;
   }
 }
