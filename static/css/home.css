@@ -69,6 +69,7 @@ p {
 }
 
 .btn {
+    margin-bottom: 10px;
     width: 150px;
     height: 45px;
     display: inline-block;
@@ -110,4 +111,18 @@ p {
 
 .button{
     margin-bottom: 1.875rem !important;
+}
+@media screen and (max-width: 740px) {
+    .text-home{
+        flex-direction: column;
+        align-items: center;
+        line-height: 29px;
+        text-align: center;
+        color: var( --text-color);
+        transition: var(--tran-05);
+        padding-top: 20%;
+    }
+    .btn{
+        width: 60%;
+    }
 }
