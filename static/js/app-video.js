@@ -29,6 +29,15 @@ function myjsapp(peerClient) {
                 $('#mute-video').removeClass('fas fa-video-slash').toggleClass("fas fa-video")
                 peerClient.muteVideo(true);
             }
+        });
+        $('#mute-mic').click(function (event) {
+            if($(this).hasClass('fa-microphone')) {
+                $(this).removeClass('fa-microphone').toggleClass('fa-microphone-slash')
+                // End established call
+                console.log("a");
+            } else {
+                $(this).removeClass('fa-microphone-slash').toggleClass("fa-microphone")
+            }
         })
     }
 
