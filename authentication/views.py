@@ -15,11 +15,11 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url="authentication")
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html', {'user_name':request.user})
 
 @login_required(login_url="authentication")
 def videochat(request):
-    return render(request, 'videochat.html')
+    return render(request, 'videochat.html', {'user_name':request.user})
 
 @login_required(login_url="authentication")
 def changepassword(request):

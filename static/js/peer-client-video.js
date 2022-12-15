@@ -41,6 +41,7 @@ peerapp = (function() {
         });
     }    
     console.log(peer)
+    initializeLocalMedia({'audio': true, 'video': true});
     // Data channel
     // Handle a Text and File connection objects
     function connect(c) {
@@ -99,6 +100,43 @@ peerapp = (function() {
         }
     };
 
+    
+    function initializeLocalMedia(options, callback) {
+
+        if(options) {
+            options['audio'] = true;
+            if(options['video'])
+                options['video'] = true;
+        } else {
+            options['audio'] = true;
+            options['video'] = false;
+        }
+
+        // Get audio/video stream
+        navigator.getUserMedia(options, function(stream) {
+            // Set your video displays
+            window.localStream = stream;
+            myapp.setMyVideo(window.localStream)
+            if(callback)
+                callback();
+        }, function(err) {
+            console.log("The following error occurred: " + err.name);
+            alert('Unable to call ' + err.name)
+        });
+    }
+
+    
+    function muteVideo(status) {
+        if(status == false)
+            status = false
+        else 
+            status = true
+        if(window.localStream) {
+            var videoTracks = window.localStream.getVideoTracks()
+            if(videoTracks && videoTracks[0])
+                videoTracks[0].enabled = status;
+        }
+    }
 
     function fetchOnlinePeers() {
         $.ajax("http://" + PEER_SERVER + ":9000/peerjs/" + myPeerID + "/onlineusers")
@@ -120,5 +158,6 @@ peerapp = (function() {
         sendMessage : sendMessage,
         connectToId : connectToId,
         connectToServerWithId : connectToServerWithId,
+        muteVideo : muteVideo,
     }
 })();

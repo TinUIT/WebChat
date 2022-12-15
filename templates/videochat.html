@@ -11,48 +11,44 @@
 </head>
 <body>
     <div class="header">
-        <!-- <div class="top-icons">
-            <img src="pictures/search.png" id="search">
-            <img src="pictures/menu.png">
-        </div> -->
         <div class="row">
             <div class="col1">
                 <img src="static\pictures\video.png" class="host-img">
                 <div class="contarols">
-                    {% comment %} <i class="fas fa-comment-slash" onclick="myFunction3(this)"></i> {% endcomment %}
-                    <i class="fas fa-microphone-slash" onclick="myFunction(this)"></i>
+                    <i  class="fas fa-microphone"></i>
                     <a href="/home"><i class="fas fa-phone" style="color:#f41919; border-radius: 50%; font-size:50px; "></i></a>
-                    <i class="fas fa-video-slash" onclick="myFunction2(this)"></i>
+                    <i id="mute-video" class="fas fa-video-slash"></i>
     
-                    <!-- màu nền của icon #2C3A4E -->
                 </div>
             </div>
             <div class="col2">
                 <div class="yourcamera">
                     <p>You</p>
                     <div>
-                        <img src="static\pictures\cam_me.png" >
+                        <video id="my-video" muted="true" autoplay=""></video>
                     </div>
                 </div>
-                {% comment %} <div class="chat">
-                    <p>Chat</p>
-                    <div id="chat">
-                        
-                    </div>
-                </div> {% endcomment %}
             </div>
         </div>
     </div>   
     <script>
-        function myFunction(x) 
-        {
-            x.classList.toggle("fa-microphone");
-        }
+        // function myFunction(x) 
+        // {
+        //     x.classList.toggle("fa-microphone-slash");
+        // }
 
         function myFunction3(x) 
         {
             x.classList.toggle("fa-comment");
         }
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script>
+        var username = "{{user_name}}"
+    </script>
+    <script src="{% static 'js/peer.js' %}"></script>
+    <script src="{% static 'js/app-video.js' %}"></script>
+    <script src="{% static 'js/peer-client-video.js' %}"></script>
 </body>
 </html>
