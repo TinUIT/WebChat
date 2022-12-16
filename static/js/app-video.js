@@ -33,11 +33,17 @@ function myjsapp(peerClient) {
         $('#mute-mic').click(function (event) {
             if($(this).hasClass('fa-microphone')) {
                 $(this).removeClass('fa-microphone').toggleClass('fa-microphone-slash')
-                // End established call
-                console.log("a");
+                peerClient.muteAudio(false)
             } else {
                 $(this).removeClass('fa-microphone-slash').toggleClass("fa-microphone")
+                peerClient.muteAudio(true)
             }
+        })
+        $('#find').click(function (event) {
+            // initializeLocalVideo()
+            var isVideoCall = true;
+            peerClient.makeCall(toPeerId, isVideoCall);
+            return false
         })
     }
 
@@ -70,6 +76,14 @@ function myjsapp(peerClient) {
                 video.src = URL.createObjectURL(stream);
             }
         },
+        setTheirVideo : function (stream) {
+            var video = document.getElementById('their-video');
+            if (typeof video.srcObject == "object") {
+                video.srcObject = stream;
+            } else {
+                video.src = URL.createObjectURL(stream);
+            }
+        },
         updateOnlieUsers : function (users) {
             if(users.length == 0) {
                 return
@@ -79,6 +93,7 @@ function myjsapp(peerClient) {
             if (toPeerId==null) {
                 toPeerId=users[random]
                 peerClient.connectToId(toPeerId)
+                // peerClient.makeCall(toPeerId, true);
                 $('.contact-profile').append('<p>'+toPeerId+'</p>')
                 console.log(toPeerId)
             }

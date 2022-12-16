@@ -3,8 +3,8 @@ peerapp = (function() {
 
     console.log("Peer client started");
 
-    var PEER_SERVER = '192.168.126.128';
-    var PORT = 9000;
+    var PEER_SERVER = 'nhom6ltw.herokuapp.com';
+    var PORT = 443;
     var connectedPeers = {};
     var myPeerID;
     var peer;
@@ -19,7 +19,7 @@ peerapp = (function() {
         if(peer && peer.disconnected == false) {
             peer.disconnect()
         }
-        peer = new Peer(myPeerID, { host: PEER_SERVER, port: PORT, path: '/'});  
+        peer = new Peer(myPeerID, { host: PEER_SERVER, port: PORT, path: '/', secure: true});  
         peer.on('open', fetchOnlinePeers);
         peer.on('connection', connect);
         peer.on('close', function(conn) {
@@ -101,7 +101,7 @@ peerapp = (function() {
 
 
     function fetchOnlinePeers() {
-        $.ajax("http://" + PEER_SERVER + ":9000/peerjs/" + myPeerID + "/onlineusers")
+        $.ajax("https://" + PEER_SERVER + "/peerjs/" + myPeerID + "/onlineusers")
         .done(function( data ) {
             // console.log(data);
             if(data.msg == 'Success') {
