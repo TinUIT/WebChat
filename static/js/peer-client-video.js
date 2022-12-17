@@ -3,7 +3,7 @@ peerapp = (function() {
 
     console.log("Peer client started");
 
-    var PEER_SERVER = '192.168.126.128';
+    var PEER_SERVER = 'nhom6ltw.herokuapp.com';
     var PORT = 9000;
     var connectedPeers = {};
     var myPeerID;
@@ -19,9 +19,65 @@ peerapp = (function() {
         if(peer && peer.disconnected == false) {
             peer.disconnect()
         }
-        peer = new Peer(myPeerID, { host: PEER_SERVER, port: PORT, path: '/'});  
-        peer.on('open', fetchOnlinePeers);
+        peer = new Peer(myPeerID, { host: PEER_SERVER, port: PORT, path: '/', secure: true});  
+        peerCallbacks(peer);
+    }    
+    console.log(peer)
+    initializeLocalMedia({'audio': true, 'video': true});
+    // Data channel
+    // Handle a Text and File connection objects
+    function connect(c) {
+        console.log(c.peer)
+        // Handle a chat connection.
+        if (c.label === 'chat') {
+            // myapp.createChatWindow(c.peer)
+            c.on('data', function(data) {
+                console.log(c.peer + ' : ' + data);
+                // Append data to chat history
+                myapp.appendHistory(c.peer, data)   
+            });
+
+            c.on('close', function() {
+                delete connectedPeers[c.peer];
+                // myapp.closeChatWindow(c.peer)
+            });
+            connectedPeers[c.peer] = c;
+        }
+    }
+    function peerCallbacks(peer) {
+        peer.on('open', function(id) {
+            console.log('My peer ID is: ' + id);
+            console.log(new Date());
+            
+            fetchOnlinePeers();
+        });
+
         peer.on('connection', connect);
+
+        peer.on('call', function(call) {
+            console.log("Receiving a call")
+            console.log(call)
+            // New call requests from users
+            // Ask Confirm before accepting call
+            // if(window.incomingCall) {
+            //     window.incomingCall.answer()
+            //     setTimeout(function () {
+            //         window.incomingCall.close();
+            //         window.incomingCall = call
+            //         myapp.showIncomingCall(call.peer);
+            //     }, 1000)
+            // } else {
+            if(window.existingCall) {
+                console.log("call")
+                rejectIncomingCall(call)
+            } else {
+                window.incomingCall = call;
+                call.answer(window.localStream);
+                callConnect(call)
+            }
+            // }
+        });
+
         peer.on('close', function(conn) {
             // New connection requests from users
             console.log("Peer connection closed");
@@ -39,32 +95,23 @@ peerapp = (function() {
             
             // peer.reconnect()
         });
-    }    
-    console.log(peer)
-    initializeLocalMedia({'audio': true, 'video': true});
-    // Data channel
-    // Handle a Text and File connection objects
-    function connect(c) {
 
-        // Handle a chat connection.
-        if (c.label === 'chat') {
-            // myapp.createChatWindow(c.peer)
-            console.log(c.peer)
-            c.on('data', function(data) {
-                console.log(c.peer + ' : ' + data);
-                // Append data to chat history
-                myapp.appendHistory(c.peer, data)   
-            });
-
-            c.on('close', function() {
-                delete connectedPeers[c.peer];
-                // myapp.closeChatWindow(c.peer)
-            });
-            connectedPeers[c.peer] = c;
-        }
+        peer.on('error', function(err) {
+            console.log(new Date());
+            console.log("Peer connection error:")
+            console.log(err)
+            if("unavailable-id" == err.type) {
+                // ID Already taken, so assigning random ID after 3 attempts
+                peerIdAlreadyTakenCount++;
+                if(peerIdAlreadyTakenCount >= 3) {
+                    peerIdAlreadyTakenCount = 0;
+                    myPeerID = generateRandomID(4);
+                }
+            } else if ("peer-unavailable" == err.type) {
+                myapp.showError(err.message)
+            }
+        });
     }
-
-
     function connectToId(id) {
         if(!id || peer.disconnected)
             return;
@@ -125,7 +172,39 @@ peerapp = (function() {
         });
     }
 
-    
+    function callConnect(call) {
+        
+        // Hang up on an existing call if present
+        if (window.existingCall) {
+            window.existingCall.close();
+        }
+
+        // Wait for stream on the call, then set peer video display
+        call.on('stream', function(stream) {
+            console.log(stream)
+            myapp.setTheirVideo(stream)
+        });
+
+        // UI stuff
+        window.existingCall = call;
+        call.on('close', function() {
+            console.log("Call Ending")
+            myapp.closeVideoCall()
+        });
+    }
+
+    function makeCall(callerID, isVideoCall) {
+        console.log("Calling..." +  callerID)
+        
+        var options = {audio: true};
+        if(isVideoCall)
+            options['video'] = true;
+
+        initializeLocalMedia(options, function() {
+            var call = peer.call(callerID, window.localStream, { 'metadata' : options });
+            callConnect(call)
+        });
+    }
     function muteVideo(status) {
         if(status == false)
             status = false
@@ -137,9 +216,20 @@ peerapp = (function() {
                 videoTracks[0].enabled = status;
         }
     }
+    function muteAudio(status) {
+        if(status == false)
+            status = false
+        else 
+            status = true
+        if(window.localStream) {
+            var audioTracks = window.localStream.getAudioTracks()
+            if(audioTracks && audioTracks[0])
+                audioTracks[0].enabled = status;
+        }
+    }
 
     function fetchOnlinePeers() {
-        $.ajax("http://" + PEER_SERVER + ":9000/peerjs/" + myPeerID + "/onlineusers")
+        $.ajax("https://" + PEER_SERVER + "/peerjs/" + myPeerID + "/onlineusers")
         .done(function( data ) {
             // console.log(data);
             if(data.msg == 'Success') {
@@ -155,9 +245,11 @@ peerapp = (function() {
     }, 5000)
 
     return {
+        makeCall : makeCall,
         sendMessage : sendMessage,
         connectToId : connectToId,
         connectToServerWithId : connectToServerWithId,
         muteVideo : muteVideo,
+        muteAudio : muteAudio,
     }
 })();
