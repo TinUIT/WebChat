@@ -1,10 +1,14 @@
 from django.contrib import admin
 from django.urls import path, include
 from . import views
+from .views import *
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.views.generic import TemplateView
+
+
+app_name = 'authentication'
 
 urlpatterns = [
     path('', views.authentication, name='authentication'),
@@ -16,6 +20,14 @@ urlpatterns = [
     path('signout', views.signout, name="signout"),
     path('videochat', views.videochat, name="videochat"),
     path('changepassword', views.changepassword, name="changepassword"),
+    path('myprofile', views.my_profile, name='myprofile'),
+    path('my_invites', views.invites_received_view, name="my_invites"),
+    path('all-profiles', ProfileListView.as_view(), name='all-profile-view'),
+    path('to-invite', views.invite_profiles_list_view, name='invite-profile-view'),
+    path('send_invite', views.send_invatation, name='send_invite'),
+    path('remove_friend', views.remove_from_friends, name='remove_friend'),
+    path('accept_invatation', views.accept_invatation, name='accept_invatation'),
+    path('reject_invatation', views.reject_invatation, name='reject_invatation'),
     path('activate/<uidb64>/<token>', views.activate, name='activate'),
     path(
         'change-password/',
