@@ -44,7 +44,7 @@ class Profile (models.Model):
     birthday = models.CharField(max_length=4,null=True)
     gender = models.CharField(max_length=6,choices=GENDER, default="M")
     city=models.CharField(max_length=200,null=True)
-    avatar=models.ImageField(upload_to="static/media/",null=True, blank=True)
+    # avatar=models.ImageField(upload_to="static/media/",null=True, blank=True)
     friends=models.ManyToManyField(User, related_name='friends',blank=True)
     objects = ProfileManager()
 

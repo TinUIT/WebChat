@@ -23,11 +23,11 @@
     margin-top: 15px;
     display: flex;
     justify-content: space-between;
-
 }
 .col1{
     flex-basis: 55%;
     margin-left: 10%;
+    align-items: center;
 }
 .col2{
     flex-basis: 20%;
@@ -42,8 +42,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
-
 }
 .contarols #icon{
     font-size:20px;
@@ -52,7 +50,6 @@
 }
 .contarols i{
     margin: 20px 20px;
-    
 }
 .fas{
     cursor: pointer;
@@ -62,27 +59,38 @@
     user-select: none;
 }
 .contarols #call{
-    width: 60px;
+    width: 50px;
 }
 .fas:hover{
     transform:translateY(-10px)
 }
 .yourcamera{
     background: #182842;
-    border-radius: 15px;
+    border-radius: 1rem;
     padding: 10px 10px 10px;
     color: #ccc;
     
 }
 .yourcamera div{
     margin-top: 10px;
-    
+    width: 100%;
 }
 .yourcamera video{
     width: 100%;
     /* height: 70px; */
     border-radius: 15px;
     cursor: pointer;
+}
+
+.col1 video{
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    cursor: pointer;
+    background: #182842;
+    padding: 10px 10px 10px;
+    color: #ccc;
+    align-items: center;
 }
 .chat{
     height: 45%;
@@ -103,3 +111,8 @@
     color: #ccc;
 }
 
+button{
+    border-radius: 0.5rem;
+    width: 50px;
+    height: 25px;
+}
