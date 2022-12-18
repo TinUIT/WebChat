@@ -3,70 +3,61 @@
 {% load static %}
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{% static 'media/sign_in.css' %}">
     <title>Sign in</title>
+    
 </head>
 
 <body>
+    
+        <div class="background1">
 
-    <div class="background1">
-
-        <div class="background2">
-            <div id="app"><a style="color: #ccc; text-decoration: none" href="/">Talk That Talk</a></div>
-        </div>
-        <a href=""><img src="{% static 'pictures\signinimage.gif' %}" alt=""></a>
-        <div class="sign_in">
+            <div class="background2">
+                <div id="app"><a style="color: #ccc; text-decoration: none" href="/">Talk That Talk</a></div>
+            </div>
             
-            <form action="/signin" method="post">
-                {% csrf_token %}
-                <div id="welcome">
-                    Welcome to Talk That Talk
-                </div>
-                <div id="no_account">
-                    No Account?
-                    <br> <a style="color: #2c3e50" href="/signup">Sign up</a>
-                </div>
-                <div id="text">
-                    Sign in
-                </div>
-                <div id="sign_in_gg">
-                    <a style="color: #2c3e50" href=""><img src="{% static 'pictures\gg.png' %}" alt=""></a>
-                    <a id="signin_gg">
-                        Sign in with Google
-                    </a>
-                </div>
-                <div id="fb">
-                    <!-- <img src="pictures/fb.png" alt=""> -->
-                    <span ><img src="{% static 'pictures\fb.png' %}" alt=""></span>
-                    <span ><a style="color: #2c3e50; text-decoration: none" href="http://facebook.com/" target="_blank" rel="noopener noreferrer"> Sign in with Facebook</a></span>             
-                </div>
-                <label for="username" id="text_username" >Enter your username or email address</label>
-                <input type="text" id="username" name="username" placeholder="Username or email address" >
-                <label for="pass1" id="text_password" >Enter your Password</label>
-                <input type="password" id="pass1" name="pass1" placeholder="Password" >
-                <button>
-                    Sign in
-                </button>
-                <div id="Forgot_Password">
-                    <a style="color: #2c3e50" href="/password-reset">Forgot Password</a>
-                </div>
-            </form>
-            <!-- < div id="text_username">
-                Enter your username or email address
+            <a href=""><img src="{% static 'pictures\signinimage.gif' %}" alt=""></a>
+                
+                    
+            <div class="sign_in">
+                
+                <form action="/signin" method="post">
+                    {% csrf_token %}
+                    <div id="welcome">
+                        Welcome to Talk That Talk
+                    </div>
+                    <div id="no_account">
+                        No Account?
+                        <br> <a style="color: #2c3e50" href="/signup">Sign up</a>
+                    </div>
+                    <div id="text">
+                        Sign in
+                    </div>
+                    <div id="sign_in_gg">
+                        <a style="color: #2c3e50" href=""><img src="{% static 'pictures\gg.png' %}" alt=""></a>
+                        <a id="signin_gg">
+                            Sign in with Google
+                        </a>
+                    </div>
+                    <div id="fb">
+                        <span ><img src="{% static 'pictures\fb.png' %}" alt=""></span>
+                        <span ><a style="color: #2c3e50; text-decoration: none" href="http://facebook.com/" target="_blank" rel="noopener noreferrer"> Sign in with Facebook</a></span>             
+                    </div>
+                    <label for="username" id="text_username" >Enter your username or email address</label>
+                    <input type="text" id="username" name="username" placeholder="Username or email address" >
+                    <label for="pass1" id="text_password" >Enter your Password</label>
+                    <input type="password" id="pass1" name="pass1" placeholder="Password" >
+                    <button>
+                        Sign in
+                    </button>
+                    <div id="Forgot_Password">
+                        <a style="color: #2c3e50" href="/password-reset">Forgot Password</a>
+                    </div>
+                </form>
             </div>
-            <div id="edit_username">
-                Username or email address
-            </div> -->
-            <!-- <div id="text_password">
-                Enter your Password
-            </div>
-            <div id="edit_password">
-                Password
-            </div> -->
-
+                
         </div>
-
-
     </div>
 </body>
 

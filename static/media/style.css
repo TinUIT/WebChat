@@ -5,28 +5,30 @@ body {
     color: #ccc;
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(44,62,80,1) 35%, rgba(0,212,255,1) 100%);
+    
 }
 
 .plugin {
-    position: relative;
+   
     width: 100%;
-    height: 100vh;
     padding: 0;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(44,62,80,1) 35%, rgba(0,212,255,1) 100%);
+    background: none;   
     font-family:'Poppins', sans-serif;
+}
+.content_left-column{
+    padding: 100px 100px;
 }
 
 .plugin #chattingapp {
-    position: absolute;
-    width: 611px;
-    height: 115px;
+   
+    width: 100%;
+    /* height: 115px; */
     left: 120px;
     top: 120px;
     font-family:'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 80px;
-    line-height: 114px;
+    font-weight: 800;
+    font-size: 50px;
+    padding-bottom: 5%;
     /* identical to box height */
 
 
@@ -34,22 +36,23 @@ body {
 }
 
 .plugin #content {
-    position: absolute;
+    
     width: 400px;
-    height: 252px;
+    /* height: 252px; */
     left: 220px;
     top: 200px;
     font-family:'Poppins', sans-serif;
     font-weight: 500;
     font-size: 40px;
     line-height: 55px;
+    color:#ccc;
 }
 
 .plugin #signin {
     
-    position: absolute;
-    width: 200px;
-    height: 60px;
+    
+   
+    /* height: 60px; */
     left: 100px;
     top: 500px;
     border-radius: 20px;
@@ -58,6 +61,7 @@ body {
     font-family:'Poppins', sans-serif;
     font-weight: 500;
     font-size: 30px;
+    padding: 5px 35px;
 
     color: #ccc;
 }
@@ -69,9 +73,9 @@ body {
 }
 
 .plugin #signup {
-    position: absolute;
-    width: 200px;
-    height: 60px;
+   
+   
+    /* height: 60px; */
     left: 350px;
     top: 500px;
     border-radius: 20px;
@@ -80,6 +84,7 @@ body {
     font-family:'Poppins', sans-serif;
     font-weight: 500;
     font-size: 30px;
+    padding: 5px 30px;
 
     color: #ccc;
 }
@@ -87,10 +92,17 @@ body {
     cursor: pointer;
 }
 .plugin #signin:hover{
-    background: #496681;
+    background: rgb(39, 37, 37);
 }
 .plugin #signup:hover{
-    background: #496681;
+    background: rgb(39, 37, 37);
+}
+.bt_style{
+    margin-right:5px;
+    margin-bottom: 5%;
+}
+.img_style{
+    padding:100px 0px;
 }
 .plugin img {
     position: absolute;
@@ -98,7 +110,7 @@ body {
     height: auto;
     left: 680px;
     top: 120px;
-    border-radius: 40px;
+    border-radius: 30px;
 }
 
 .backgound1 {

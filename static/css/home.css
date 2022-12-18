@@ -22,7 +22,7 @@
     --tran-05: all 0.3s ease;
 }
 section .home{
-    background: var(--primary-color-light);
+    background: var(--sidebar-color);
 }
 .text-home{
     flex-direction: column;
