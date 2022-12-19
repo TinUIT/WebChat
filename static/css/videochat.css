@@ -116,3 +116,8 @@ button{
     width: 50px;
     height: 25px;
 }
+
+button:hover{
+    background: gray;
+    transform: translateY(1px)
+}
