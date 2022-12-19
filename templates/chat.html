@@ -175,7 +175,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script>
+	var userid = {{user_name.id}};
+	var peid = null;
 	var username = "{{user_name}}"
+	window.CSRF_TOKEN = "{{ csrf_token }}"; 
 </script>
 <script src="{% static 'js/peer.js' %}"></script>
 <script src="{% static 'js/app.js' %}"></script>

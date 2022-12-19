@@ -12,7 +12,7 @@ function myjsapp(peerClient) {
         }
 
         $('#send').click(function(event) {
-            var msgText =  $('#message').val()
+            var msgText =  $('#message').val() 
             if(msgText) {
                 console.log(toPeerId);
                 peerClient.sendMessage(toPeerId, msgText)
@@ -22,11 +22,14 @@ function myjsapp(peerClient) {
         });
 
         $('.addfr').click(function(event) {
-            if ($('.contact-profile p').text().length > 0) {
+            if ($('.contact-profile p').text().length > 0 && peid != null) {
                 $.ajax({
                     type: "POST",
-                    url: "/send_invite",
-                    data: $('.contact-profile p').text(),
+                    url: "/chat",
+                    data:{
+                        receiver: peid,
+                        csrfmiddlewaretoken: window.CSRF_TOKEN
+                    },
                     success: function() {
                         console.log("success")
                     },

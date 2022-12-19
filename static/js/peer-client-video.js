@@ -71,9 +71,13 @@ peerapp = (function() {
                 console.log("call")
                 rejectIncomingCall(call)
             } else {
-                window.incomingCall = call;
-                call.answer(window.localStream);
-                callConnect(call)
+                var metadata = {'audio': true, 'video': true}
+        
+                initializeLocalMedia(metadata, function() {
+                    call.answer(window.localStream);
+                    myapp.showVideoCall(metadata);
+                    callConnect(call)
+                });
             }
             // }
         });
@@ -167,7 +171,7 @@ peerapp = (function() {
             if(callback)
                 callback();
         }, function(err) {
-            console.log("The following error occurred: " + err.name);
+            console.log("The following error occurred: initializeLocalMedia" + err.name);
             alert('Unable to call ' + err.name)
         });
     }
