@@ -536,11 +536,30 @@ body {
   margin-left: 14px;
   cursor: pointer;
 }
+#frame .content .contact-profile .social-media i .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgb(210, 204, 204);
+  color: #fff;
+  text-align: center;
+  border-radius: 10px 0 10px 10px ;
+  padding: 5px 2px;
+  margin-top: 20px;
+  margin-left: -150px;
+  font-size: smaller;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
 #frame .content .contact-profile .social-media i:nth-last-child(1) {
   margin-right: 20px;
 }
 #frame .content .contact-profile .social-media i:hover {
   color: #435f7a;
+}
+#frame .content .contact-profile .social-media i:hover .tooltiptext {
+  visibility: visible;
 }
 #frame .content .messages {
   height: auto;
@@ -669,4 +688,13 @@ body {
 }
 #frame .content .message-input .wrap button:focus {
   outline: none;
+}
+
+.fa-solid fa-user-plus {
+  
+    cursor: pointer;
+    transition: transform 0.5s;
+    font-size:30px;
+    color:#fff;
+    user-select: none;
 }
