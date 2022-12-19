@@ -15,23 +15,28 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView
 from django.db.models import Q
 
-@login_required(login_url="authentication")
+@login_required(login_url="/authentication")
 def home(request):
     return render(request, 'home.html', {'user_name':request.user})
 
-@login_required(login_url="authentication")
+@login_required(login_url="/authentication")
 def videochat(request):
     return render(request, 'videochat.html', {'user_name':request.user})
 
-@login_required(login_url="authentication")
+@login_required(login_url="/authentication")
 def changepassword(request):
     return render(request, 'changepassword.html')
 
-@login_required(login_url="authentication")
+@login_required(login_url="/authentication")
 def chat(request):
+    if request.method == "POST":
+        pk = request.POST.get('receiver')
+        user = request.user
+        sender = Profile.objects.get(user=user)
+        receiver = Profile.objects.get(user=pk)
     return render(request, 'chat.html', {'user_name':request.user})
 
-@login_required(login_url="authentication")
+@login_required(login_url="/authentication")
 def profile(request):
     context={}
     ch = Profile.objects.filter(user__id=request.user.id)
@@ -129,17 +134,17 @@ def signin(request):
         if user is not None:
             login(request, user)
             # messages.success(request, "Logged In Sucessfully!!")
-            return redirect('home')
+            return redirect("/home")
         else:
-            messages.error(request, "Bad Credentials!!")
-            return redirect('signin')
+            # messages.error(request, "Bad Credentials!!")
+            return redirect('/signin')
     
     return render(request, "authentication/signin.html")
 
 def signout(request):
     logout(request)
     messages.success(request, "Logged Out Successfully!!")
-    return redirect('home')
+    return redirect('/')
 
 def activate(request,uidb64,token):
     try:
@@ -154,19 +159,19 @@ def activate(request,uidb64,token):
         myuser.save()
         login(request,myuser)
         messages.success(request, "Your Account has been activated!!")
-        return redirect('signin')
+        return redirect('/signin')
     else:
         return render(request,'activation_failed.html') 
 
 
-@login_required(login_url="authentication")
+@login_required(login_url="/authentication")
 def my_profile(request):
     profile= Profile.objects.get(user=request.user)
     context = {'profile': profile}
 
     return render(request, 'myprofile.html',context)
 
-@login_required(login_url="authentication")
+@login_required(login_url="/authentication")
 def invites_received_view(request):
     profile = Profile.objects.get(user=request.user)
     qs = Relationship.objects.invatations_received(profile)

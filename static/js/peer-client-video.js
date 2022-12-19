@@ -4,7 +4,7 @@ peerapp = (function() {
     console.log("Peer client started");
 
     var PEER_SERVER = 'nhom6ltw.herokuapp.com';
-    var PORT = 9000;
+    var PORT = 443;
     var connectedPeers = {};
     var myPeerID;
     var peer;
