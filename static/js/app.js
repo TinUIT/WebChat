@@ -20,6 +20,22 @@ function myjsapp(peerClient) {
                 $('#message').val('').focus()
             }
         });
+
+        $('.addfr').click(function(event) {
+            if ($('.contact-profile p').text().length > 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "/send_invite",
+                    data: $('.contact-profile p').text(),
+                    success: function() {
+                        console.log("success")
+                    },
+                })
+            }
+            // $.get('/send_invite', function(data) {
+            //     console.log(data)
+            // })
+        })
     }
 
     function appendToHistory(id, message, isSent) {
