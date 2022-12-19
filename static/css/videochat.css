@@ -58,12 +58,32 @@
     color:#fff;
     user-select: none;
 }
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: rgb(39, 39, 46);
+    color: #fff;
+    text-align: center;
+    border-radius: 10px 0 10px 10px ;
+    padding: 5px 2px;
+    margin-top: 30px;
+    margin-left: -150px;
+    font-size: 11pt;
+  
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
 .contarols #call{
     width: 50px;
 }
 .fas:hover{
     transform:translateY(-10px)
 }
+
+.fas:hover .tooltiptext {
+    visibility: visible;
+  }
 .yourcamera{
     background: #182842;
     border-radius: 1rem;
@@ -115,4 +135,9 @@ button{
     border-radius: 0.5rem;
     width: 50px;
     height: 25px;
+}
+
+button:hover{
+    background: gray;
+    transform: translateY(1px)
 }
