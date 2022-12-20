@@ -115,9 +115,11 @@ button{
     border-radius: 0.5rem;
     width: 50px;
     height: 25px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
 }
 
 button:hover{
     background: gray;
-    transform: translateY(1px)
+    transform: translateY(1px);
 }
