@@ -21,9 +21,9 @@
     --tran-04: all 0.3s ease;
     --tran-05: all 0.3s ease;
 }
-/* .home{
+section .home{
     background: var(--primary-color-light);
-} */
+}
 .text-home{
     flex-direction: column;
     align-items: center;
