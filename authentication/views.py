@@ -30,11 +30,15 @@ def changepassword(request):
 @login_required(login_url="/authentication")
 def chat(request):
     if request.method == "POST":
-        pk = request.POST.get('receiver')
+        data = request.POST.get('receiver')
         user = request.user
         sender = Profile.objects.get(user=user)
-        receiver = Profile.objects.get(user=pk)
-    return render(request, 'chat.html', {'user_name':request.user})
+        receiver = Profile.objects.get(user=data)
+
+        rel = Relationship.objects.create(sender=sender, receiver=receiver, status='send')
+        
+    data = Profile.objects.get(user__id=request.user.id) 
+    return render(request, 'chat.html', {'user_name':request.user, "data": data})
 
 @login_required(login_url="/authentication")
 def profile(request):

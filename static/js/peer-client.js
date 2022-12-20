@@ -50,9 +50,11 @@ peerapp = (function() {
             // myapp.createChatWindow(c.peer)
             console.log(c.peer)
             c.on('data', function(data) {
-                console.log(c.peer + ' : ' + data);
+                //console.log(c.peer + ' : ' + data);
                 // Append data to chat history
-                myapp.appendHistory(c.peer, data)   
+                var message = data.split("+$$$+")
+                myapp.appendHistory(c.peer, message[0])   
+                peid = message[1]
             });
 
             c.on('close', function() {
@@ -73,7 +75,7 @@ peerapp = (function() {
             var c = peer.connect(requestedPeer, {
                 label: 'chat',
                 serialization: 'none',
-                metadata: { message: 'hi i want to chat with you!' }
+                metadata: { message: userid }
             });
             c.on('open', function() {
                 connect(c);
@@ -87,7 +89,7 @@ peerapp = (function() {
         
         if(connectedPeers[peerId]) {
             var conn = connectedPeers[peerId]
-            conn.send(msgText)
+            conn.send(msgText + "+$$$+" +userid )
             console.log(conn)
         }
     }

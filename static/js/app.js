@@ -12,7 +12,7 @@ function myjsapp(peerClient) {
         }
 
         $('#send').click(function(event) {
-            var msgText =  $('#message').val()
+            var msgText =  $('#message').val() 
             if(msgText) {
                 console.log(toPeerId);
                 peerClient.sendMessage(toPeerId, msgText)
@@ -20,6 +20,25 @@ function myjsapp(peerClient) {
                 $('#message').val('').focus()
             }
         });
+
+        $('.addfr').click(function(event) {
+            if ($('.contact-profile p').text().length > 0 && peid != null) {
+                $.ajax({
+                    type: "POST",
+                    url: "/chat",
+                    data:{
+                        receiver: peid,
+                        csrfmiddlewaretoken: window.CSRF_TOKEN
+                    },
+                    success: function() {
+                        console.log("success")
+                    },
+                })
+            }
+            // $.get('/send_invite', function(data) {
+            //     console.log(data)
+            // })
+        })
     }
 
     function appendToHistory(id, message, isSent) {

@@ -3,7 +3,7 @@
 my Profile
 {% endblock %}
 {% block content %}
-<h1 style="magin=10dx"> Profile of: {{request.user}}</h1>
+<h1 style="magin : 10dx"> Profile of: {{request.user}}</h1>
     {% for friend in profile.get_friends %}
         {{friend}}
         <br>
