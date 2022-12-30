@@ -32,7 +32,7 @@
     color: var( --text-color);
     transition: var(--tran-05);
     background: var(--primary-color-light);
-    height: 1000vh;
+    height: 800px;
 }
 .img-home{
     max-width: 100%;
