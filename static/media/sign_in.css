@@ -3,11 +3,13 @@ body {
     font-family:'Poppins', sans-serif;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(44,62,80,1) 35%, rgba(0,212,255,1) 100%);
     width: 100%;
-    height: 750px;
+    height: 1000vh; 
+    background-repeat: no-repeat;
 
 }
 *{
     font-family:'Poppins', sans-serif;
+    
 }
 
 .background1 {
@@ -15,6 +17,8 @@ body {
     /* width: 100%;
     height: 750px; */
     /* background: #FFFFFF; */
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(44,62,80,1) 35%, rgba(0,212,255,1) 100%);
+    width: 100%; */
 }
 .background1 .background2 #app {
     position: absolute;
@@ -82,9 +86,9 @@ body {
 
 
     position: absolute;
-    width: 86px;
+    /* width: 86px; */
     height: 40px;
-    right: 40px;
+    right:9%;
     top: 50px;
     font-weight: 400;
     font-size: 13px;
@@ -145,10 +149,10 @@ body {
 }
 .background1 .sign_in #fb {
     position: absolute;
-    width: 300px;
+    /* width: 150px; */
     height: 55px;
     left:50%;
-    top: 165px;
+    top: 163px;
     padding-left: 50px;
     padding-top: 20px;
     color: #2c3e50;
@@ -276,6 +280,7 @@ color: #4285F4;
         width: 54%;
     }
     
+    
 }
 @media screen and (max-width: 740px) {
     .background1 img{
@@ -288,8 +293,114 @@ color: #4285F4;
         left: 9%;
         
     }
+
     
     
+  }
+
+  @media screen and (max-width: 740px) {
+    .background1 img{
+        display: none;
+    }
+    .background1 .sign_in {
+        
+        width: 85%;
+        height: 600px;
+        left: 9%;
+        
+    }
+    
+    
+  }
+
+  @media screen and (max-width: 450px) {
+    .background1 img{
+        display: none;
+    }
+    .background1 .sign_in {
+        
+        width: 90%;
+        height: 600px;
+        left: 5%;
+        
+    }
+    body{
+        width: 100%;
+    }
+    .background1 {
+        position: relative;
+        /* width: 100%;
+        height: 750px; */
+        /* background: #FFFFFF; */
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(44,62,80,1) 35%, rgba(0,212,255,1) 100%);
+        width: 100%;
+    }
+    
+    .background1 .sign_in #fb{
+        left: 38%;
+    }
+    
+}
+@media screen and (max-width: 1350px){
+    .background1 img{
+    width: 40%;
+}
+
+.background2{
+    width: 100%;
+}
+}
+@media screen and (max-width: 1170px){
+    .background1 img{
+        width: 30%;
+    }
+    .background1 .sign_in {
+        left: 40%;
+        width: 50%;
+    }
+}
+@media screen and (max-width: 883px){
+    .background1 img{
+        width: 30%;
+    }
+    .background1 .sign_in {
+        left: 40%;
+        width: 54%;
+    }
+    
+}
+@media screen and (max-width: 740px) {
+    
+    .background1 .sign_in {
+        
+        width: 85%;
+        height: 600px;
+        left: 9%;
+        
+    }
+    
+    
+  }
+
+  @media screen and (max-width: 500px) {
+    .background1 .sign_in #no_account{
+        top: 15%;
+        left: 70%;
+        right:3%;
+        
+    }
+    .background1 .sign_in #fb{
+        left: 40%;
+    }
+    .gg{
+        display: block;
+    }
+    .background1 .sign_in #signin_gg {
+        width: 100px;
+    }
+    .background1 .sign_in #signin_gg{
+        left: 15%;
+    }
   }
 
 
