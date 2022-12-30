@@ -37,7 +37,7 @@ body {
 
 .plugin #content {
     
-    width: 400px;
+    /* width: 400px; */
     /* height: 252px; */
     left: 220px;
     top: 200px;
@@ -118,4 +118,29 @@ body {
     width: 1440px;
     height: 1024px;
     background: #d03434;
+}
+
+@media screen and (max-width: 830px) {
+    .plugin #signin {
+        padding: 5px 20px;
+    }
+    .plugin #signup {
+        padding: 5px 15px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .plugin #signin {
+        padding: 5px 20px;
+    }
+    .plugin #signup {
+        padding: 5px 15px;
+    }
+}
+@media screen and (max-width: 376px) {
+    .plugin #signin {
+        padding: 5px 15px;
+    }
+    .plugin #signup {
+        padding: 5px 10px;
+    }
 }
