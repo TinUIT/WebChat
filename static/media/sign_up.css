@@ -90,7 +90,7 @@ border-radius: 40px;
 }
 .background1 .sign_in #text {
     position: absolute;
-    width: 300px;
+    width: 200px;
     height: 83px;
     left: 40px;
     top: 40px;
@@ -355,5 +355,12 @@ cursor: pointer;
     
   }
 
-
+  @media screen and (max-width: 500px) {
+    .background1 .sign_in #have_an_account{
+        top: 8%;
+        left: 75%;
+    }
+    
+    
+  }
 
