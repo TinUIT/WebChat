@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-+=(0i4)nd-@%#3=wx@v^=ai%em-tez)22m@x5&9u+($j5vh)15
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nhom6ltw.pythonanywhere.com']
 
 
 # Application definition
@@ -59,7 +59,7 @@ ROOT_URLCONF = 'webchatapp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': [ BASE_DIR /'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

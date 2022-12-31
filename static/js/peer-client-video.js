@@ -75,7 +75,6 @@ peerapp = (function() {
         
                 initializeLocalMedia(metadata, function() {
                     call.answer(window.localStream);
-                    myapp.showVideoCall(metadata);
                     callConnect(call)
                 });
             }

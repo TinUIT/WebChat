@@ -27,7 +27,7 @@ def videochat(request):
 def changepassword(request):
     return render(request, 'changepassword.html')
 
-@login_required(login_url="/authentication")
+@login_required(login_url="/")
 def chat(request):
     if request.method == "POST":
         data = request.POST.get('receiver')
@@ -40,7 +40,7 @@ def chat(request):
     data = Profile.objects.get(user__id=request.user.id) 
     return render(request, 'chat.html', {'user_name':request.user, "data": data})
 
-@login_required(login_url="/authentication")
+@login_required(login_url="/")
 def profile(request):
     context={}
     ch = Profile.objects.filter(user__id=request.user.id)
